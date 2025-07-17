@@ -1,0 +1,252 @@
+:root {
+    --primary-bg: #f9f9f9;           /* Light neutral for body background */
+    --secondary-bg: #ffffff;         /* Clean white for sections/cards */
+    --dark-text: #222222;            /* Dark text for readability */
+    --light-border: #e0e0e0;         /* Subtle border color */
+    --accent: #3D405B;               /* Deep blue-gray for buttons/footer */
+    --terra-cotta: #E07A5F;          /* Warm terracotta for highlights */
+  }
+  
+  * {
+    font-family: "Josefin Sans", sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    background: var(--primary-bg);
+    color: var(--dark-text);
+    line-height: 1.6;
+    font-weight: 400;
+  }
+  
+  h1, h2 {
+    font-weight: 600;
+  }
+  
+  .container {
+    max-width: 900px;
+    margin: auto;
+    padding: 1rem;
+  }
+  
+  header {
+    display: grid;
+    grid-template-columns: 48px auto 48px;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--terra-cotta);
+    color: #fff;
+    padding: 0.5rem 1rem;
+  }
+  
+  header img {
+    width: 100%;
+    height: auto;
+  }
+  
+  header span {
+    font-size: 1.2rem;
+    color: #fff;
+  }
+  
+  .hamburger {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .hamburger::before {
+    content: "\2630"; /* ☰ */
+  }
+  
+  .hamburger.show::before {
+    content: "\00D7"; /* × */
+  }
+  
+  /* Navigation */
+  nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 10px; /* space between buttons */
+  }
+  
+  nav li {
+    margin: 0;
+  }
+  
+  nav button,
+  nav a.external-button {
+    background-color: #0077cc;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+  }
+  
+  nav button:hover,
+  nav a.external-button:hover,
+  nav button:focus,
+  nav a.external-button:focus {
+    background-color: #005fa3;
+    outline: 2px solid #007bff;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
+  }
+  
+  nav button[aria-current="page"] {
+    background-color: #005fa3;
+    cursor: default;
+  }
+  
+  nav button[aria-current="page"]:hover {
+    background-color: #005fa3;
+  }
+  
+  /* Sections */
+  .hero-section,
+  .content-grid > div,
+  .web-certificate-courses {
+    background: var(--secondary-bg);
+    border: 1px solid var(--light-border);
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+  
+  /* Grid for About Me + Photo */
+  .content-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 1rem;
+  }
+  
+  .student-photo img {
+    max-width: 100%;
+    border-radius: 8px;
+  }
+   
+  /* Web Certificate Courses */
+  .web-certificate-courses {
+    background-color: var(--secondary-bg);
+    padding: 20px;
+    border: 1px solid var(--light-border);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .course-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 15px;
+    justify-content: center;
+  }
+  
+  .course-buttons button,
+  .course-item label {
+    padding: 10px 15px;
+    border: 1px solid var(--light-border);
+    background-color: var(--button-bg);
+    color: var(--dark-text);
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease;
+    user-select: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .course-buttons button:hover,
+  .course-buttons button:focus,
+  .course-item label:hover,
+  .course-item label:focus {
+    background-color: var(--button-hover-bg);
+    outline: none;
+  }
+  
+  .course-buttons button.active {
+    background-color: var(--active-button-bg);
+    color: var(--active-button-text);
+    border-color: var(--active-button-bg);
+    cursor: default;
+  }
+  
+  /* Course list styling */
+  .course-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 15px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 10px;
+    justify-items: center;
+  }
+  
+  .course-item {
+    width: 100%;
+  }
+  
+  .course-completed {
+    cursor: pointer;
+    margin-right: 8px;
+  }
+  
+  .credits {
+    font-style: italic;
+    color: var(--accent-color);
+    margin-left: 0.5rem;
+    font-size: 0.9rem;
+  }
+  
+  /* Total and completed credits */
+  .total-credits,
+  .completed-credits {
+    font-style: italic;
+    color: var(--accent-color);
+    margin: 8px 0;
+  }
+  
+  /* Footer */
+  footer {
+    background: var(--accent);
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+  }
+  
+  .social-links a {
+    color: #fff;
+    margin: 0 0.5rem;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+  }
+  
+  .social-links a:hover,
+  .social-links a:focus {
+    color: var(--terra-cotta);
+    outline: none;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 600px) {
+    .content-grid {
+      grid-template-columns: 1fr;
+    }
+    .course-list {
+      grid-template-columns: 1fr;
+    }
+  }

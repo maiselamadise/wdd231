@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Maisela Manhla Madise's WDD231 Course Home Page for BYU-Idaho." />
+  <meta name="author" content="Maisela Manhla Madise" />
+  <title>Maisela Manhla Madise - WDD231 Home Page</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet" />
+  
+  <!-- Font Awesome for social icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <link rel="stylesheet" href="styles/home-page.css" />
+</head>
+<body>
+  <header>
+    <img src="images/home.svg" alt="Site Logo" width="48" height="48" />
+    <span>WDD231 Course Home Page</span>
+    <button id="ham-btn" class="hamburger" aria-label="Toggle Navigation"></button>
+  </header>
+
+  <nav>
+    <ul>
+      <li><button aria-current="page">Home</button></li>
+      <li><button>Chamber</button></li>
+      <li><button>Final</button></li>
+    </ul>
+  </nav>
+
+  <main class="container">
+    <section class="hero-section">
+      <h1>Maisela Manhla Madise</h1>
+      <p>Welcome to my WDD231 Course Home Page - BYU-Idaho</p>
+    </section>
+
+    <section class="content-grid">
+      <div class="about-me">
+        <h2>About Me</h2>
+        <p>Hi, my name is Maisela Manhla Madise from Johannesburg, South Africa. I am a software development student at BYU-Idaho, a husband, and a father of a wonderful daughter. In my free time, I enjoy singing and learning instruments.</p>
+      </div>
+      <div class="student-photo">
+        <h2>Student Photo</h2>
+        <img src="images/MMM.jpeg" alt="Photo of Maisela Manhla Madise" width="300" height="300" />
+      </div>
+    </section>
+
+    <section class="web-certificate-courses">
+      <h2>Web Certificate Courses</h2>
+      <div class="course-buttons" role="group" aria-label="Course Filters">
+        <button class="course-filter active" data-filter="All" aria-pressed="true">All</button>
+        <button class="course-filter" data-filter="WDD" aria-pressed="false">WDD</button>
+        <button class="course-filter" data-filter="CSE" aria-pressed="false">CSE</button>
+      </div>
+
+      <ul class="course-list">
+        <li class="course-item" data-category="WDD" data-credits="2">
+          <label><input type="checkbox" class="course-completed" /> WDD 130 – Web Fundamentals <span class="credits">(2 credits)</span></label>
+        </li>
+        <li class="course-item" data-category="WDD" data-credits="2">
+          <label><input type="checkbox" class="course-completed" /> WDD 131 – Dynamic Web <span class="credits">(2 credits)</span></label>
+        </li>
+        <li class="course-item" data-category="WDD" data-credits="2">
+          <label><input type="checkbox" class="course-completed" /> WDD 231 – Frontend Dev I <span class="credits">(2 credits)</span></label>
+        </li>
+        <li class="course-item" data-category="CSE" data-credits="3">
+          <label><input type="checkbox" class="course-completed" /> CSE 110 – Intro to Computing <span class="credits">(3 credits)</span></label>
+        </li>
+        <li class="course-item" data-category="CSE" data-credits="3">
+          <label><input type="checkbox" class="course-completed" /> CSE 210 – Data Structures <span class="credits">(3 credits)</span></label>
+        </li>
+      </ul>
+
+      <div class="total-credits">Total Credits: <span id="credit-count">0</span></div>
+      <div class="completed-credits">Completed Credits: <span id="completed-credit-count">0</span></div>
+      <div class="completed-classes">Classes Taken: <span id="completed-classes-count">0</span></div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="social-links" aria-label="Social Media Links">
+      <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+      <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+    </div>
+    <p>&copy; <span id="current-year"></span> Maisela Manhla Madise | Johannesburg, RSA</p>
+    <p>Last Modified: <span id="last-modified"></span></p>
+  </footer>
+
+  <script src="scripts/home-page.js" defer></script>
+</body>
+</html>
