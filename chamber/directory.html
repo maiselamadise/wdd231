@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Business Directory for [Your City] Chamber of Commerce" />
+  <meta name="author" content="Your Full Name" />
+  
+  <!-- Favicon -->
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+
+  <!-- Facebook Open Graph Meta -->
+  <meta property="og:title" content="[Your City] Chamber of Commerce Directory" />
+  <meta property="og:description" content="Explore businesses and services in [Your City]." />
+  <meta property="og:image" content="https://yourgithub.io/wdd231/chamber/images/social-preview.jpg" />
+  <meta property="og:url" content="https://yourgithub.io/wdd231/chamber/directory.html" />
+
+  <!-- Normalize -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="styles/chamber.css" />
+
+  <title>Directory - [Your City] Chamber</title>
+</head>
+<body>
+  <header>
+    <h1>[Your City] Chamber of Commerce</h1>
+    <nav>
+      <button id="menu-toggle">Menu</button>
+      <ul id="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="directory.html">Directory</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="view-toggle">
+      <button id="grid-view">Grid View</button>
+      <button id="list-view">List View</button>
+    </section>
+    <section id="directory" class="grid-view">
+      <!-- Member cards inserted via JavaScript -->
+    </section>
+  </main>
+
+  <footer>
+    <p>Contact: contact@yourcitychamber.org | (123) 456-7890</p>
+    <p>&copy; <span id="year"></span> | Your Full Name | WDD 231</p>
+    <p>Last Modified: <span id="lastModified"></span></p>
+  </footer>
+
+  <script src="scritpts/chamber.js" defer></script>
+</body>
+</html>
