@@ -1,38 +1,32 @@
-document.getElementById("year").textContent = new Date().getFullYear();
-document.getElementById("lastModified").textContent = document.lastModified;
-
-// Toggle views
-const gridBtn = document.getElementById("grid-view");
-const listBtn = document.getElementById("list-view");
-const directory = document.getElementById("directory");
-
-gridBtn.addEventListener("click", () => {
-  directory.classList.add("grid-view");
-  directory.classList.remove("list-view");
+// Responsive menu toggle
+document.getElementById('menuBtn').addEventListener('click', () => {
+  document.getElementById('navMenu').classList.toggle('show');
 });
 
-listBtn.addEventListener("click", () => {
-  directory.classList.add("list-view");
-  directory.classList.remove("grid-view");
+// View toggle
+document.getElementById('gridView').addEventListener('click', () => {
+  document.getElementById('members').className = 'grid';
 });
 
-// Fetch and display members
-async function getMembers() {
-  const response = await fetch("data/members.json");
-  const data = await response.json();
+document.getElementById('listView').addEventListener('click', () => {
+  document.getElementById('members').className = 'list';
+});
 
-  data.forEach((member) => {
-    const card = document.createElement("div");
-    card.classList.add("card");
-    card.innerHTML = `
-      <h3>${member.name}</h3>
-      <img src="images/${member.image}" alt="${member.name} logo" loading="lazy">
-      <p><strong>Address:</strong> ${member.address}</p>
-      <p><strong>Phone:</strong> ${member.phone}</p>
-      <a href="${member.website}" target="_blank">Visit Website</a>
-    `;
-    directory.appendChild(card);
+// Load members from JSON
+fetch('data/members.json')
+  .then(response => response.json())
+  .then(data => {
+    const membersSection = document.getElementById('members');
+    data.members.forEach(member => {
+      const card = document.createElement('div');
+      card.classList.add('card');
+      card.innerHTML = `
+        <img src="${member.image}" alt="${member.name} Logo" />
+        <h3>${member.name}</h3>
+        <p>${member.address}</p>
+        <p>${member.phone}</p>
+        <a href="${member.website}" target="_blank">Visit Website</a>
+      `;
+      membersSection.appendChild(card);
+    });
   });
-}
-
-getMembers();
