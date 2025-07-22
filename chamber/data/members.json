@@ -1,0 +1,60 @@
+{
+  "members": [
+    {
+      "name": "Sunset Bakery",
+      "address": "123 Main St, Springville",
+      "phone": "555-0001",
+      "website": "https://sunsetbakery.com",
+      "image": "sunsetbakery.png",
+      "membership": 3
+    },
+    {
+      "name": "TechHub Solutions",
+      "address": "456 Tech Ave, Springville",
+      "phone": "555-0022",
+      "website": "https://techhub.com",
+      "image": "techhub.png",
+      "membership": 2
+    },
+    {
+      "name": "Green Landscaping",
+      "address": "789 Park Lane, Springville",
+      "phone": "555-0033",
+      "website": "https://greenlandscape.com",
+      "image": "greenlandscape.png",
+      "membership": 1
+    },
+    {
+      "name": "Fitness First Gym",
+      "address": "100 Fit Rd, Springville",
+      "phone": "555-0044",
+      "website": "https://fitnessfirst.com",
+      "image": "fitnessfirst.png",
+      "membership": 2
+    },
+    {
+      "name": "Fresh Market",
+      "address": "210 Fresh Blvd, Springville",
+      "phone": "555-0055",
+      "website": "https://freshmarket.com",
+      "image": "freshmarket.png",
+      "membership": 1
+    },
+    {
+      "name": "Cozy Cafe",
+      "address": "321 Coffee St, Springville",
+      "phone": "555-0066",
+      "website": "https://cozycafe.com",
+      "image": "cozycafe.png",
+      "membership": 3
+    },
+    {
+      "name": "Ace Hardware",
+      "address": "890 Tool Ave, Springville",
+      "phone": "555-0077",
+      "website": "https://acehardware.com",
+      "image": "acehardware.png",
+      "membership": 1
+    }
+  ]
+}
