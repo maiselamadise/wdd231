@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-">
+<html lang="en-US">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,12 +7,11 @@
   <meta name="author" content="Maisela Manhla Madise" />
   <title>Johannesburg Chamber Directory</title>
 
-  <!-- Favicon -->
   <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
 
-  <!-- Open Graph (Facebook) Meta Tags -->
+  <!-- Open Graph Meta Tags -->
   <meta property="og:title" content="YourCity Chamber of Commerce" />
-  <meta property="og:description" content="Connecting businesses and community in YourCity." />
+  <meta property="og:description" content="Connecting businesses and community in Johannesburg." />
   <meta property="og:image" content="images/social-preview.jpg" />
   <meta property="og:url" content="https://yourdomain.com/chamber/directory.html" />
 
@@ -24,23 +23,20 @@
   <header>
     <h1>Johannesburg Chamber of Commerce</h1>
     <nav>
-      <button id="menuBtn">☰</button>
-    <nav>
-  <button id="menuBtn" aria-label="Toggle Menu">☰</button>
-  <ul id="navMenu" class="hidden">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="directory.html" class="active">Directory</a></li>
-    <li><a href="join.html">Join</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-</nav>
+      <button id="menuBtn" aria-label="Toggle Menu">☰</button>
+      <ul id="navMenu" class="hidden">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="directory.html" class="active">Directory</a></li>
+        <li><a href="join.html">Join</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
     </nav>
   </header>
 
   <main>
     <div class="view-toggle">
-      <button id="gridView">Grid</button>
-      <button id="listView">List</button>
+      <button id="gridView" aria-pressed="true">Grid</button>
+      <button id="listView" aria-pressed="false">List</button>
     </div>
     <section id="members" class="grid"></section>
   </main>
@@ -51,7 +47,7 @@
     <p>Last Modified: <span id="lastModified"></span></p>
   </footer>
 
-  <script src="scritpts/chamber.js"></script>
+  <script src="scripts/chamber.js"></script>
   <script>
     document.getElementById("lastModified").textContent = document.lastModified;
   </script>

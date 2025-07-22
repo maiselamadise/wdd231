@@ -47,6 +47,11 @@ nav a {
   text-decoration: none;
 }
 
+nav a.active {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
 .view-toggle {
   text-align: center;
   margin: 1rem;
@@ -71,6 +76,18 @@ nav a {
 #members.list {
   display: block;
   padding: 1rem;
+}
+
+#members.list .card {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
+#members.list .card img {
+  display: none;
 }
 
 .card {
@@ -108,4 +125,26 @@ footer {
   nav button {
     display: block;
   }
+}
+
+/* Membership Badge Styles */
+.gold {
+  background: gold;
+  color: #000;
+  padding: 0.25em 0.5em;
+  border-radius: 5px;
+}
+
+.silver {
+  background: silver;
+  color: #000;
+  padding: 0.25em 0.5em;
+  border-radius: 5px;
+}
+
+.bronze {
+  background: #cd7f32;
+  color: white;
+  padding: 0.25em 0.5em;
+  border-radius: 5px;
 }
