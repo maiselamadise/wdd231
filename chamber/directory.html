@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -17,20 +17,23 @@
   <meta property="og:url" content="https://yourdomain.com/chamber/directory.html" />
 
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="styles/bas.css" />
+  <link rel="stylesheet" href="styles/base.css" />
   <link rel="stylesheet" href="styles/chamber.css" />
 </head>
 <body>
   <header>
     <h1>Johannesburg Chamber of Commerce</h1>
     <nav>
-      <button id="menuBtn" aria-label="Toggle Menu" aria-expanded="false">☰</button>
-      <ul id="navMenu" class="hidden">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="directory.html" class="active">Directory</a></li>
-        <li><a href="join.html">Join</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
+      <button id="menuBtn">☰</button>
+    <nav>
+  <button id="menuBtn" aria-label="Toggle Menu">☰</button>
+  <ul id="navMenu" class="hidden">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="directory.html" class="active">Directory</a></li>
+    <li><a href="join.html">Join</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
     </nav>
   </header>
 
@@ -43,25 +46,14 @@
   </main>
 
   <footer>
-    <p>Contact us: info@yourchamber.org | +27 84 417 8859</p>
+    <p>Contact us: info@yourchamber.org | +27 84 417 8859 </p>
     <p>Maisela Manhla Madise | WDD 231</p>
     <p>Last Modified: <span id="lastModified"></span></p>
   </footer>
 
-  <!-- Scripts -->
-  <script src="scripts/chamber.js"></script>
+  <script src="scritpts/chamber.js"></script>
   <script>
-    // Display last modified date
     document.getElementById("lastModified").textContent = document.lastModified;
-
-    // Toggle navigation menu (basic example)
-    const menuBtn = document.getElementById("menuBtn");
-    const navMenu = document.getElementById("navMenu");
-
-    menuBtn.addEventListener("click", () => {
-      const isHidden = navMenu.classList.toggle("hidden");
-      menuBtn.setAttribute("aria-expanded", !isHidden);
-    });
   </script>
 </body>
 </html>

@@ -1,59 +1,59 @@
 {
   "members": [
     {
-      "name": "Sunset Bakery",
-      "address": "123 Main St, Springville",
-      "phone": "555-0001",
-      "website": "https://sunsetbakery.com",
-      "image": "sunsetbakery.png",
+      "name": "Sunrise Bakes",
+      "address": "12 Long Street, Cape Town",
+      "phone": "+27 21 555 0101",
+      "website": "https://sunrisebakes.co.za",
+      "image": "chamber/images/SunBake.png",
       "membership": 3
     },
     {
-      "name": "TechHub Solutions",
-      "address": "456 Tech Ave, Springville",
-      "phone": "555-0022",
-      "website": "https://techhub.com",
-      "image": "techhub.png",
+      "name": "InnoTech Solutions",
+      "address": "88 Tech Crescent, Sandton, Johannesburg",
+      "phone": "+27 11 555 0202",
+      "website": "https://innotech.co.za",
+      "image": "https://example.com/logos/innotech.png",
       "membership": 2
     },
     {
-      "name": "Green Landscaping",
-      "address": "789 Park Lane, Springville",
-      "phone": "555-0033",
-      "website": "https://greenlandscape.com",
-      "image": "greenlandscape.png",
+      "name": "Green Earth Landscaping",
+      "address": "45 Garden Lane, Durban",
+      "phone": "+27 31 555 0303",
+      "website": "https://greenearth.co.za",
+      "image": "https://example.com/logos/greenearth.png",
       "membership": 1
     },
     {
-      "name": "Fitness First Gym",
-      "address": "100 Fit Rd, Springville",
-      "phone": "555-0044",
-      "website": "https://fitnessfirst.com",
-      "image": "fitnessfirst.png",
+      "name": "Vitality Gym SA",
+      "address": "101 Fit Avenue, Pretoria",
+      "phone": "+27 12 555 0404",
+      "website": "https://vitalitygym.co.za",
+      "image": "https://example.com/logos/vitalitygym.png",
       "membership": 2
     },
     {
-      "name": "Fresh Market",
-      "address": "210 Fresh Blvd, Springville",
-      "phone": "555-0055",
-      "website": "https://freshmarket.com",
-      "image": "freshmarket.png",
+      "name": "Harvest Fresh Market",
+      "address": "200 Fresh Lane, Port Elizabeth",
+      "phone": "+27 41 555 0505",
+      "website": "https://harvestfresh.co.za",
+      "image": "https://example.com/logos/harvestfresh.png",
       "membership": 1
     },
     {
-      "name": "Cozy Cafe",
-      "address": "321 Coffee St, Springville",
-      "phone": "555-0066",
-      "website": "https://cozycafe.com",
-      "image": "cozycafe.png",
+      "name": "Ubuntu Café",
+      "address": "32 Coffee Street, Bloemfontein",
+      "phone": "+27 51 555 0606",
+      "website": "https://ubuntucafe.co.za",
+      "image": "https://example.com/logos/ubuntucafe.png",
       "membership": 3
     },
     {
-      "name": "Ace Hardware",
-      "address": "890 Tool Ave, Springville",
-      "phone": "555-0077",
-      "website": "https://acehardware.com",
-      "image": "acehardware.png",
+      "name": "BuildRight Hardware",
+      "address": "890 Tool Road, East London",
+      "phone": "+27 43 555 0707",
+      "website": "https://buildright.co.za",
+      "image": "https://example.com/logos/buildright.png",
       "membership": 1
     }
   ]
