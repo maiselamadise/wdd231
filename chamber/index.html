@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>[Your City] Chamber of Commerce</title>
+  <link rel="stylesheet" href="styles/chamber.css" />
+  <script src="scritpts/weather.js" defer></script>
+  <script src="scritpts/spotlight.js" defer></script>
+</head>
+<body>
+
+  <header>
+    <h1>[City Name] Chamber of Commerce</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="directory.html">Directory</a></li>
+        <li><a href="#">Join</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero Image -->
+    <section class="hero">
+      <img src="images/hero.jpg" alt="City view or business background" />
+      <div class="cta">
+        <a href="#">Join the Chamber</a>
+      </div>
+    </section>
+
+    <!-- Events Section -->
+    <section class="events">
+      <h2>Upcoming Events</h2>
+      <ul>
+        <li><strong>July 26:</strong> Summer Business Mixer at Civic Center</li>
+        <li><strong>August 3:</strong> Ribbon Cutting – New Library Branch</li>
+      </ul>
+    </section>
+
+    <!-- Weather Section -->
+    <section class="weather">
+      <h2>Current Weather</h2>
+      <div id="weatherInfo">
+        <!-- Filled by JS -->
+      </div>
+    </section>
+
+    <!-- Spotlights -->
+    <section class="spotlights">
+      <h2>Member Spotlights</h2>
+      <div class="spotlight-container" id="spotlightContainer">
+        <!-- Filled by JS -->
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 [City Name] Chamber of Commerce</p>
+  </footer>
+
+</body>
+</html>
