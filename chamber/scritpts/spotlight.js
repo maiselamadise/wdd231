@@ -1,4 +1,4 @@
-fetch("data/members.json")
+fetch("data/member.json")
   .then(res => res.json())
   .then(data => {
     const eligible = data.filter(member => member.level === "gold" || member.level === "silver");

@@ -1,0 +1,29 @@
+{
+    "members": [
+    {
+      "name": "Ace Hardware",
+      "level": "gold",
+      "logo": "images/ace.png",
+      "phone": "555-1234",
+      "address": "123 Main St",
+      "website": "https://acehardware.com"
+    },
+    {
+      "name": "Sunrise Bakery",
+      "level": "silver",
+      "logo": "images/sunrise.png",
+      "phone": "555-5678",
+      "address": "456 Maple St",
+      "website": "https://sunrisebakery.com"
+    },
+    {
+      "name": "Green Lawn Services",
+      "level": "bronze",
+      "logo": "images/greenlawn.png",
+      "phone": "555-8765",
+      "address": "789 Elm St",
+      "website": "https://greenlawn.com"
+    }
+]
+}
+  
