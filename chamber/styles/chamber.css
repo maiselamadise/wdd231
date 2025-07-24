@@ -6,13 +6,23 @@
   --border: #ccc;
 }
 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  overflow-x: hidden;
+}
+
 body {
   font-family: Arial, sans-serif;
-  margin: 0;
   background: var(--main-bg);
   color: var(--text-color);
 }
 
+/* Header */
 header {
   background: var(--accent);
   color: #fff;
@@ -20,9 +30,22 @@ header {
   text-align: center;
 }
 
+.logo-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.logo-title img {
+  height: 50px;
+}
+
+/* Navigation */
 nav {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   background: #004466;
 }
 
@@ -36,10 +59,13 @@ nav button {
 }
 
 nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
   list-style: none;
   padding: 0;
-  display: flex;
-  gap: 1rem;
+  margin: 0;
+  transition: all 0.3s ease-in-out;
 }
 
 nav a {
@@ -52,6 +78,91 @@ nav a.active {
   text-decoration: underline;
 }
 
+/* Responsive Nav */
+@media screen and (max-width: 600px) {
+  nav ul {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  nav ul.show {
+    display: flex;
+  }
+
+  nav button {
+    display: block;
+  }
+}
+
+/* Hero Section with CTA */
+.hero {
+  position: relative;
+  text-align: center;
+}
+
+.hero img {
+  width: 100%;
+  height: auto;
+}
+
+.cta {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.cta a {
+  background: var(--accent);
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.cta a:hover {
+  background: #005580;
+}
+
+/* Events & Weather */
+.weather, .events {
+  background: var(--card-bg);
+  margin: 1rem;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.weather ul, .events ul {
+  padding-left: 1.5rem;
+}
+
+/* Spotlights */
+.spotlights {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  padding: 1rem;
+}
+
+.spotlight-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+.spotlight-card img {
+  max-width: 80px;
+  margin-bottom: 0.5rem;
+}
+
+/* View Toggle (Grid/List) */
 .view-toggle {
   text-align: center;
   margin: 1rem;
@@ -103,6 +214,7 @@ nav a.active {
   height: auto;
 }
 
+/* Footer */
 footer {
   background: #004466;
   color: white;
@@ -111,23 +223,7 @@ footer {
   margin-top: 2rem;
 }
 
-@media screen and (max-width: 600px) {
-  nav ul {
-    display: none;
-    flex-direction: column;
-    background: #004466;
-  }
-
-  nav ul.show {
-    display: flex;
-  }
-
-  nav button {
-    display: block;
-  }
-}
-
-/* Membership Badge Styles */
+/* Membership Badges */
 .gold {
   background: gold;
   color: #000;

@@ -23,7 +23,7 @@ listBtn.addEventListener('click', () => {
 // Load Members using async/await
 async function loadMembers() {
   try {
-    const response = await fetch('data/members.json');
+    const response = await fetch('data/member.json');
     if (!response.ok) throw new Error(`Error: ${response.status}`);
     const data = await response.json();
 

@@ -1,58 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Chamber of Commerce Home Page" />
-  <title>Chamber of Commerce</title>
+  <meta name="description" content="Welcome to the City Chamber of Commerce homepage" />
+  <title>Johannesburg Chamber of Commerce</title>
   <link rel="stylesheet" href="styles/chamber.css" />
 </head>
 <body>
+
   <header>
+    <div class="logo-title">
+      <img src="images/VF.png" alt="Chamber Logo" />
+      <h1>Johannesburg Chamber of Commerce</h1>
+    </div>
     <nav>
-      <ul class="nav-menu">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Directory</a></li>
-        <li><a href="#">Events</a></li>
-        <li><a href="#">Contact</a></li>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="directory.html">Directory</a></li>
+        <li><a href="join.html">Join</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
-    <!-- ✅ Hero Section -->
     <section class="hero">
-      <div class="hero-content">
-        <h1>Welcome to the Chamber</h1>
-        <a href="#join" class="cta-button">Join Now</a>
+      <img src="images/chamber.jpeg" alt="Community Event" />
+      <div class="cta">
+        <a href="join.html">Join the Chamber</a>
       </div>
     </section>
 
-    <!-- ✅ Current Events -->
     <section class="events">
       <h2>Upcoming Events</h2>
       <ul>
-        <li>Business Networking - July 30</li>
-        <li>Chamber Breakfast - August 5</li>
-        <li>Local Market Day - August 12</li>
+        <li><strong>July 28:</strong> Community Picnic at Central Park</li>
+        <li><strong>August 5:</strong> Business Mixer at Chamber Hall</li>
       </ul>
     </section>
 
-    <!-- ✅ Weather Section -->
-    <section class="weather">
-      <h2>Current Weather</h2>
-      <div id="weatherContainer">Loading weather...</div>
+    <section class="weather" id="weather">
+      <h2>Local Weather</h2>
+      <p>Loading weather...</p>
     </section>
 
-    <!-- ✅ Company Spotlight -->
-    <section class="spotlights">
+    <section class="spotlights" id="spotlights">
       <h2>Member Spotlights</h2>
-      <div id="spotlightContainer" class="spotlight-grid"></div>
+      <!-- Cards injected by JavaScript -->
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 Chamber of Commerce</p>
+    <p>&copy; 2025 City Chamber of Commerce | Contact: info@citychamber.org</p>
   </footer>
 
   <script src="scripts/weather.js" defer></script>

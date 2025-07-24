@@ -1,25 +1,28 @@
 {
   "members": [
     {
-      "name": "Alpha Solutions",
-      "logo": "images/alpha.png",
-      "description": "Your partner in business innovation.",
-      "website": "https://alpha.com",
-      "membership": "Gold"
+      "name": "Acme Corp",
+      "membership": "Gold",
+      "logo": "images/acme-logo.png",
+      "website": "https://acme.com"
     },
     {
-      "name": "Bravo Builders",
-      "logo": "images/bravo.png",
-      "description": "Construction experts since 1999.",
-      "website": "https://bravobuilders.com",
-      "membership": "Silver"
+      "name": "BizSolutions",
+      "membership": "Silver",
+      "logo": "images/bizsolutions-logo.png",
+      "website": "https://bizsolutions.co.za"
     },
     {
-      "name": "Charlie Coffee",
-      "logo": "images/charlie.png",
-      "description": "Locally roasted artisan coffee.",
-      "website": "https://charliecoffee.com",
-      "membership": "Bronze"
+      "name": "Cafe Central",
+      "membership": "Bronze",
+      "logo": "images/cafe-logo.png",
+      "website": "https://cafecentral.co.za"
+    },
+    {
+      "name": "TechNest",
+      "membership": "Gold",
+      "logo": "images/technest-logo.png",
+      "website": "https://technest.africa"
     }
   ]
 }

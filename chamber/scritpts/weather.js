@@ -1,32 +1,41 @@
-const apiKey = 'YOUR_API_KEY';
-const city = 'YOUR_CITY_NAME';
+const apiKey = "YOUR_API_KEY";
+const lat = -26.2041;
+const lon = 28.0473;
+const weatherURL = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=minutely,hourly,alerts&units=metric&appid=${apiKey}`;
 
-const weatherContainer = document.getElementById("weatherContainer");
-
-async function getWeather() {
+async function fetchWeather() {
   try {
-    const response = await fetch(
-      `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`
-    );
+    const response = await fetch(weatherURL);
+    if (!response.ok) throw new Error("Weather fetch failed");
+
     const data = await response.json();
+    const weatherSection = document.getElementById("weather");
 
-    const current = data.list[0];
-    const forecastDays = data.list.filter(item => item.dt_txt.includes("12:00:00")).slice(0, 3);
-
-    weatherContainer.innerHTML = `
-      <p><strong>Current:</strong> ${current.main.temp}°C, ${current.weather[0].description}</p>
-      <h4>3-Day Forecast</h4>
+    const currentTemp = data.current.temp.toFixed(1);
+    const description = data.current.weather[0].description;
+    
+    // Build current weather
+    let content = `
+      <p><strong>Current:</strong> ${currentTemp}°C, ${description}</p>
+      <p><strong>3-Day Forecast:</strong></p>
       <ul>
-        ${forecastDays.map(day => {
-          const date = new Date(day.dt_txt).toLocaleDateString(undefined, { weekday: 'short' });
-          return `<li>${date}: ${day.main.temp}°C, ${day.weather[0].main}</li>`;
-        }).join("")}
-      </ul>
     `;
+
+    for (let i = 1; i <= 3; i++) {
+      const day = data.daily[i];
+      const dayTemp = day.temp.day.toFixed(1);
+      const desc = day.weather[0].description;
+      const date = new Date(day.dt * 1000).toLocaleDateString("en-US", { weekday: "long" });
+      content += `<li>${date}: ${dayTemp}°C, ${desc}</li>`;
+    }
+
+    content += `</ul>`;
+    weatherSection.innerHTML = content;
+
   } catch (error) {
-    console.error("Weather fetch error:", error);
-    weatherContainer.innerHTML = "<p>Unable to load weather data.</p>";
+    console.error("Weather error:", error);
+    document.getElementById("weather").innerHTML = "<p>Weather unavailable</p>";
   }
 }
 
-getWeather();
+fetchWeather();
