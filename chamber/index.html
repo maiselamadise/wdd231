@@ -1,22 +1,22 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en-ZA">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Johannesburg Chamber of Commerce</title>
+  <meta name="description" content="Official site of the Johannesburg Chamber of Commerce." />
   <link rel="stylesheet" href="styles/chamber.css" />
-  <script src="scritpts/weather.js" defer></script>
-  <script src="scritpts/spotlight.js" defer></script>
+  <script src="scripts/weather.js" defer></script>
+  <script src="scripts/spotlight.js" defer></script>
 </head>
 <body>
-
   <header>
     <h1>Johannesburg Chamber of Commerce</h1>
     <nav>
       <ul>
         <li><a href="index.html" class="active">Home</a></li>
         <li><a href="directory.html">Directory</a></li>
-        <li><a href="#">Join</a></li>
+        <li><a href="join.html">Join</a></li>
       </ul>
     </nav>
   </header>
@@ -24,9 +24,9 @@
   <main>
     <!-- Hero Image -->
     <section class="hero">
-      <img src="images/hero.jpg" alt="City view or business background" />
+      <img src="images/hero.jpg" alt="A panoramic view of Johannesburg city skyline" />
       <div class="cta">
-        <a href="#">Join the Chamber</a>
+        <a href="join.html">Join the Chamber</a>
       </div>
     </section>
 
@@ -57,8 +57,10 @@
   </main>
 
   <footer>
-    <p>&copy; Johannesburg Chamber of Commerce</p>
+    <p>&copy; <span id="year"></span> Johannesburg Chamber of Commerce</p>
   </footer>
-
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
