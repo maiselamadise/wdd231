@@ -1,66 +1,61 @@
 <!DOCTYPE html>
-<html lang="en-ZA">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Johannesburg Chamber of Commerce</title>
-  <meta name="description" content="Official site of the Johannesburg Chamber of Commerce." />
+  <meta name="description" content="Chamber of Commerce Home Page" />
+  <title>Chamber of Commerce</title>
   <link rel="stylesheet" href="styles/chamber.css" />
-  <script src="scripts/weather.js" defer></script>
-  <script src="scripts/spotlight.js" defer></script>
 </head>
 <body>
   <header>
-    <h1>Johannesburg Chamber of Commerce</h1>
     <nav>
-      <ul>
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="directory.html">Directory</a></li>
-        <li><a href="join.html">Join</a></li>
+      <ul class="nav-menu">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Directory</a></li>
+        <li><a href="#">Events</a></li>
+        <li><a href="#">Contact</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
-    <!-- Hero Image -->
+    <!-- ✅ Hero Section -->
     <section class="hero">
-      <img src="images/hero.jpg" alt="A panoramic view of Johannesburg city skyline" />
-      <div class="cta">
-        <a href="join.html">Join the Chamber</a>
+      <div class="hero-content">
+        <h1>Welcome to the Chamber</h1>
+        <a href="#join" class="cta-button">Join Now</a>
       </div>
     </section>
 
-    <!-- Events Section -->
+    <!-- ✅ Current Events -->
     <section class="events">
       <h2>Upcoming Events</h2>
       <ul>
-        <li><strong>July 26:</strong> Summer Business Mixer at Civic Center</li>
-        <li><strong>August 3:</strong> Ribbon Cutting – New Library Branch</li>
+        <li>Business Networking - July 30</li>
+        <li>Chamber Breakfast - August 5</li>
+        <li>Local Market Day - August 12</li>
       </ul>
     </section>
 
-    <!-- Weather Section -->
+    <!-- ✅ Weather Section -->
     <section class="weather">
       <h2>Current Weather</h2>
-      <div id="weatherInfo">
-        <!-- Filled by JS -->
-      </div>
+      <div id="weatherContainer">Loading weather...</div>
     </section>
 
-    <!-- Spotlights -->
+    <!-- ✅ Company Spotlight -->
     <section class="spotlights">
       <h2>Member Spotlights</h2>
-      <div class="spotlight-container" id="spotlightContainer">
-        <!-- Filled by JS -->
-      </div>
+      <div id="spotlightContainer" class="spotlight-grid"></div>
     </section>
   </main>
 
   <footer>
-    <p>&copy; <span id="year"></span> Johannesburg Chamber of Commerce</p>
+    <p>&copy; 2025 Chamber of Commerce</p>
   </footer>
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+
+  <script src="scripts/weather.js" defer></script>
+  <script src="scripts/spotlight.js" defer></script>
 </body>
 </html>

@@ -1,29 +1,25 @@
 {
-    "members": [
+  "members": [
     {
-      "name": "Ace Hardware",
-      "level": "gold",
-      "logo": "images/ace.png",
-      "phone": "555-1234",
-      "address": "123 Main St",
-      "website": "https://acehardware.com"
+      "name": "Alpha Solutions",
+      "logo": "images/alpha.png",
+      "description": "Your partner in business innovation.",
+      "website": "https://alpha.com",
+      "membership": "Gold"
     },
     {
-      "name": "Sunrise Bakery",
-      "level": "silver",
-      "logo": "images/sunrise.png",
-      "phone": "555-5678",
-      "address": "456 Maple St",
-      "website": "https://sunrisebakery.com"
+      "name": "Bravo Builders",
+      "logo": "images/bravo.png",
+      "description": "Construction experts since 1999.",
+      "website": "https://bravobuilders.com",
+      "membership": "Silver"
     },
     {
-      "name": "Green Lawn Services",
-      "level": "bronze",
-      "logo": "images/greenlawn.png",
-      "phone": "555-8765",
-      "address": "789 Elm St",
-      "website": "https://greenlawn.com"
+      "name": "Charlie Coffee",
+      "logo": "images/charlie.png",
+      "description": "Locally roasted artisan coffee.",
+      "website": "https://charliecoffee.com",
+      "membership": "Bronze"
     }
-]
+  ]
 }
-  

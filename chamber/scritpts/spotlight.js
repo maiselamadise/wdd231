@@ -1,26 +1,24 @@
 fetch("data/members.json")
-  .then((response) => response.json())
-  .then((data) => {
-    const spotlightDiv = document.getElementById("spotlightContainer");
-    const goldSilver = data.members.filter(member =>
+  .then(response => response.json())
+  .then(data => {
+    const members = data.members.filter(member =>
       member.membership === "Gold" || member.membership === "Silver"
     );
 
-    const randomMembers = [];
-    while (randomMembers.length < 3 && goldSilver.length > 0) {
-      const index = Math.floor(Math.random() * goldSilver.length);
-      randomMembers.push(goldSilver.splice(index, 1)[0]);
-    }
+    const shuffled = members.sort(() => 0.5 - Math.random());
+    const selected = shuffled.slice(0, Math.floor(Math.random() * 2) + 2); // 2 or 3
 
-    spotlightDiv.innerHTML = randomMembers.map(member => `
+    const container = document.getElementById("spotlightContainer");
+    container.innerHTML = selected.map(member => `
       <div class="spotlight">
+        <img src="${member.logo}" alt="${member.name} logo" loading="lazy" />
         <h3>${member.name}</h3>
         <p>${member.description}</p>
-        <a href="${member.website}" target="_blank">Visit Website</a>
+        <a class="button" href="${member.website}" target="_blank" rel="noopener">Visit Website</a>
       </div>
     `).join("");
   })
-  .catch(err => {
-    console.error("Error loading spotlights:", err);
-    document.getElementById("spotlightContainer").textContent = "Unable to load member spotlights.";
+  .catch(error => {
+    console.error("Error loading member spotlights:", error);
+    document.getElementById("spotlightContainer").innerHTML = "<p>Unable to load member spotlights.</p>";
   });
