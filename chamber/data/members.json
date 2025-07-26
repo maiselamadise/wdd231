@@ -1,28 +1,28 @@
 {
   "members": [
     {
-      "name": "Acme Corp",
-      "membership": "Gold",
-      "logo": "images/acme-logo.png",
-      "website": "https://acme.com"
+      "name": "Sunrise Bakes",
+      "address": "12 Long Street, Cape Town",
+      "phone": "+27 21 555 0101",
+      "website": "https://sunrisebakes.co.za",
+      "image": "https://chamber/images/SunBake.png",
+      "membership": 3
     },
     {
-      "name": "BizSolutions",
-      "membership": "Silver",
-      "logo": "images/bizsolutions-logo.png",
-      "website": "https://bizsolutions.co.za"
+      "name": "InnoTech Solutions",
+      "address": "88 Tech Crescent, Sandton, Johannesburg",
+      "phone": "+27 11 555 0202",
+      "website": "https://innotech.co.za",
+      "image": "https://chamber/images/InnoTech.jpeg",
+      "membership": 2
     },
     {
-      "name": "Cafe Central",
-      "membership": "Bronze",
-      "logo": "images/cafe-logo.png",
-      "website": "https://cafecentral.co.za"
-    },
-    {
-      "name": "TechNest",
-      "membership": "Gold",
-      "logo": "images/technest-logo.png",
-      "website": "https://technest.africa"
+      "name": "BuildRight Hardware",
+      "address": "890 Tool Road, East London",
+      "phone": "+27 43 555 0707",
+      "website": "https://buildright.co.za",
+      "image": "https://chamber/images/Build.png",
+      "membership": 1
     }
   ]
 }
