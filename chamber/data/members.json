@@ -1,28 +1,65 @@
-{
-  "members": [
-    {
-      "name": "Sunrise Bakes",
-      "address": "12 Long Street, Cape Town",
-      "phone": "+27 21 555 0101",
-      "website": "https://sunrisebakes.co.za",
-      "image": "https://chamber/images/SunBake.png",
-      "membership": 3
-    },
-    {
-      "name": "InnoTech Solutions",
-      "address": "88 Tech Crescent, Sandton, Johannesburg",
-      "phone": "+27 11 555 0202",
-      "website": "https://innotech.co.za",
-      "image": "https://chamber/images/InnoTech.jpeg",
-      "membership": 2
-    },
-    {
-      "name": "BuildRight Hardware",
-      "address": "890 Tool Road, East London",
-      "phone": "+27 43 555 0707",
-      "website": "https://buildright.co.za",
-      "image": "https://chamber/images/Build.png",
-      "membership": 1
-    }
-  ]
-}
+[
+  {
+    "name": "Sandton City Retail",
+    "address": "Rivonia Rd & Sandton Dr, Sandton, Johannesburg",
+    "phoneNumber": "+27 11 217 6000",
+    "websiteURL": "https://www.sandtoncity.com/",
+    "imageFileName": "sandton-city.jpg",
+    "membershipLevel": "Gold",
+    "description": "Premium shopping mall offering a wide range of international and local brands."
+  },
+  {
+    "name": "Melville Koppies Nature Reserve",
+    "address": "Judith Rd, Emmarentia, Johannesburg",
+    "phoneNumber": "+27 11 482 4797",
+    "websiteURL": "https://mk.org.za/",
+    "imageFileName": "melville-koppies.jpg",
+    "membershipLevel": "Bronze",
+    "description": "A declared National Heritage Site with hiking trails and natural Highveld grasslands."
+  },
+  {
+    "name": "Gold Reef City Theme Park",
+    "address": "Northern Pkwy, Ormonde, Johannesburg",
+    "phoneNumber": "+27 11 248 5000",
+    "websiteURL": "https://www.goldreefcity.co.za/",
+    "imageFileName": "gold-reef-city.jpg",
+    "membershipLevel": "Silver",
+    "description": "Popular theme park and casino complex built on an old gold mine."
+  },
+  {
+    "name": "Jo'burg Theatre",
+    "address": "Loveday St, Braamfontein, Johannesburg",
+    "phoneNumber": "+27 11 877 6800",
+    "websiteURL": "https://www.joburgtheatre.com/",
+    "imageFileName": "joburg-theatre.jpg",
+    "membershipLevel": "Silver",
+    "description": "Major theatrical venue showcasing a diverse range of local and international productions."
+  },
+  {
+    "name": "Constitution Hill",
+    "address": "11 Kotze St, Braamfontein, Johannesburg",
+    "phoneNumber": "+27 11 381 3100",
+    "websiteURL": "https://www.constitutionhill.org.za/",
+    "imageFileName": "constitution-hill.jpg",
+    "membershipLevel": "Bronze",
+    "description": "Former prison and military fort, now a living museum and home to the Constitutional Court of South Africa."
+  },
+  {
+    "name": "FNB Bank City",
+    "address": "Bank City, Simmonds St, Johannesburg",
+    "phoneNumber": "+27 87 575 9404",
+    "websiteURL": "https://www.fnb.co.za/",
+    "imageFileName": "fnb-bank-city.jpg",
+    "membershipLevel": "Gold",
+    "description": "Headquarters of First National Bank, a leading financial institution in South Africa."
+  },
+  {
+    "name": "Nelson Mandela Square",
+    "address": "Maude St, Sandton, Johannesburg",
+    "phoneNumber": "+27 11 217 6000",
+    "websiteURL": "https://www.nelsonmandelasquare.co.za/",
+    "imageFileName": "nelson-mandela-square.jpg",
+    "membershipLevel": "Silver",
+    "description": "Iconic public square featuring a large statue of Nelson Mandela, surrounded by shops and restaurants."
+  }
+]
