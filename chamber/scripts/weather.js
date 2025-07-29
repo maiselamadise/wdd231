@@ -1,7 +1,7 @@
 // scripts/weather.js
 
 const apiKey = '69ad7fc43b77efbd86e3c82c2b61861a';
-const city = 'New York'; // Change this to your preferred city
+const city = 'Johannesburg'; // Change this to your preferred city
 const units = 'imperial'; // Use 'metric' for Celsius
 
 document.addEventListener('DOMContentLoaded', () => {

@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Home of members for the Johannesburg Chamber of Commerce. Find local businesses and services." />
+  <meta name="author" content="Maisela Manhla Madise" />
   <title>Chamber of Commerce Home</title>
   <link rel="stylesheet" href="styles/chamber.css" />
   <style>
-    /* Basic example CSS for demo */
+   
     body {
       font-family: Arial, sans-serif;
       margin: 0; padding: 0;
@@ -24,12 +26,14 @@
       margin: 0 1rem;
       text-decoration: none;
       font-weight: bold;
-      outline: px solid #004d40;
+      outline: 2px solid #004d40; /* Fixed outline with numeric value */
       outline-offset: 2px;
     }
-    nav a:hover {
-      background-color: #004d40; /* Darker Teal on hover */
+    nav a:hover, nav a:focus {
+      background-color: #00332f; /* Darker teal for hover/focus */
       border-radius: 0.5px;
+      outline-color: #ff6600; /* highlight on focus */
+      outline-offset: 4px;
     }
     main {
       max-width: 1200px;
@@ -130,7 +134,7 @@
 
 <main>
   <section class="hero">
-    <a href="join.html">Join the Chamber Today!</a>
+    <a href="join.html" role="button" aria-label="Join the Chamber Today">Join the Chamber Today!</a>
   </section>
 
   <section class="events">
@@ -144,31 +148,47 @@
 
   <section class="weather">
     <h2>Weather</h2>
-    <div class="current-weather">
+    <div class="current-weather" aria-live="polite" aria-atomic="true">
       <p>Loading current weather...</p>
     </div>
     <div class="forecast">
       <h3>3-Day Forecast</h3>
-      <div id="forecast-container">Loading forecast...</div>
+      <div id="forecast-container" aria-live="polite" aria-atomic="true">Loading forecast...</div>
     </div>
   </section>
 
   <section class="spotlights">
     <h2>Member Spotlights</h2>
-    <div id="spotlight-container">
+    <div id="spotlight-container" aria-live="polite" aria-atomic="true">
       <p>Loading spotlight members...</p>
     </div>
   </section>
 </main>
 
 <footer>
-  <p>&copy; 2025 Chamber of Commerce</p>
+  <p>&copy; <span id="copyright-year"></span> Johannesburg Chamber of Commerce</p>
+  <p>Phone: +27 84 417 8859 | Email: info@joburgchamber.org</p>
+  <p>Maisela Manhla Madise | WDD 231</p>
+  <p>Last Modification: <span id="last-modified"></span></p>
+  <p>Current Time: <span id="current-time"></span></p>
 </footer>
-
 
 <script src="scripts/weather.js"></script>
 <script src="scripts/spotlight.js"></script>
 <script src="scripts/chamber.js"></script>
+
+<script>
+  // Dynamic footer info script
+  document.getElementById('copyright-year').textContent = new Date().getFullYear();
+  document.getElementById('last-modified').textContent = new Date(document.lastModified).toLocaleString();
+
+  function updateCurrentTime() {
+    const now = new Date();
+    document.getElementById('current-time').textContent = now.toLocaleTimeString();
+  }
+  updateCurrentTime();
+  setInterval(updateCurrentTime, 1000);
+</script>
 
 </body>
 </html>
