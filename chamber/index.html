@@ -1,96 +1,97 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Home of members for the Johannesburg Chamber of Commerce. Find local businesses and services.">
-  <meta name="author" content="Maisela Manhla Madise">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Home of members for the Johannesburg Chamber of Commerce. Find local businesses and services." />
+  <meta name="author" content="Maisela Manhla Madise" />
   <title>Johannesburg Chamber of Commerce | Home</title>
 
   <!-- Favicon -->
-  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
 
   <!-- Open Graph Metadata -->
-  <meta property="og:title" content="Johannesburg Chamber of Commerce Home">
-  <meta property="og:description" content="Home of members for the Johannesburg Chamber of Commerce. Find local businesses and services.">
-  <meta property="og:image" content="images/chamber.jpeg">
-  <meta property="og:url" content="https://localhost/chamber">
+  <meta property="og:title" content="Johannesburg Chamber of Commerce Home" />
+  <meta property="og:description" content="Home of members for the Johannesburg Chamber of Commerce. Find local businesses and services." />
+  <meta property="og:image" content="https://maiselamandisa.github.io/chamber/images/chamber.jpeg" />
+  <meta property="og:url" content="https://maiselamandisa.github.io/chamber/" />
+  <meta property="og:type" content="website" />
 
-  <!-- External CSS -->
-  <link rel="stylesheet" href="styles/chamber.css">
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles/chamber.css" />
 </head>
 <body>
+  <header>
+    <h1>Johannesburg Chamber of Commerce</h1>
+    <p>Connecting Businesses, Building Community</p>
+    <nav aria-label="Main navigation">
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="directory.html">Directory</a></li>
+        <li><a href="join.html">Join</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-<header>
-  <nav aria-label="Main navigation">
-    <a href="index.html">Home</a>
-    <a href="directory.html">Directory</a>
-    <a href="events.html">Events</a>
-    <a href="join.html">Join</a>
-  </nav>
-</header>
+  <main>
+    <h2>Welcome to the Johannesburg Chamber of Commerce</h2>
 
-<main>
-  <h1>Johannesburg Chamber of Commerce | Home</h1>
+    <section class="hero">
+      <a href="join.html" role="button" aria-label="Join the Chamber Today">Join the Chamber Today!</a>
+    </section>
 
-  <section class="hero">
-    <a href="join.html" role="button" aria-label="Join the Chamber Today">Join the Chamber Today!</a>
-  </section>
+    <section class="events">
+      <h2>Current Events</h2>
+      <ul>
+        <li>Annual Business Expo – August 15, 2025</li>
+        <li>Networking Breakfast – August 22, 2025</li>
+        <li>Chamber Awards Gala – September 10, 2025</li>
+      </ul>
+    </section>
 
-  <section class="events">
-    <h2>Current Events</h2>
-    <ul>
-      <li>Annual Business Expo – August 15, 2025</li>
-      <li>Networking Breakfast – August 22, 2025</li>
-      <li>Chamber Awards Gala – September 10, 2025</li>
-    </ul>
-  </section>
+    <section class="weather">
+      <h2>Weather</h2>
+      <div class="current-weather" aria-live="polite" aria-atomic="true">
+        <p>Loading current weather...</p>
+      </div>
+      <div class="forecast">
+        <h3>3-Day Forecast</h3>
+        <div id="forecast-container" aria-live="polite" aria-atomic="true">Loading forecast...</div>
+      </div>
+    </section>
 
-  <section class="weather">
-    <h2>Weather</h2>
-    <div class="current-weather" aria-live="polite" aria-atomic="true">
-      <p>Loading current weather...</p>
-    </div>
-    <div class="forecast">
-      <h3>3-Day Forecast</h3>
-      <div id="forecast-container" aria-live="polite" aria-atomic="true">Loading forecast...</div>
-    </div>
-  </section>
+    <section class="spotlights">
+      <h2>Member Spotlights</h2>
+      <div id="spotlight-container" aria-live="polite" aria-atomic="true">
+        <p>Loading spotlight members...</p>
+      </div>
+    </section>
+  </main>
 
-  <section class="spotlights">
-    <h2>Member Spotlights</h2>
-    <div id="spotlight-container" aria-live="polite" aria-atomic="true">
-      <p>Loading spotlight members...</p>
-    </div>
-  </section>
-</main>
+  <footer>
+    <p>&copy; <span id="copyright-year"></span> Johannesburg Chamber of Commerce</p>
+    <p>Phone: +27 84 417 8859 | Email: info@joburgchamber.org</p>
+    <p>Maisela Manhla Madise | WDD 231</p>
+    <p>Last Modification: <span id="last-modified"></span></p>
+    <p>Current Time: <span id="current-time"></span></p>
+  </footer>
 
-<footer>
-  <p>&copy; <span id="copyright-year"></span> Johannesburg Chamber of Commerce</p>
-  <p>Phone: +27 84 417 8859 | Email: info@joburgchamber.org</p>
-  <p>Maisela Manhla Madise | WDD 231</p>
-  <p>Last Modification: <span id="last-modified"></span></p>
-  <p>Current Time: <span id="current-time"></span></p>
-</footer>
+  <script src="scripts/weather.js" defer></script>
+  <script src="scripts/spotlight.js" defer></script>
+  <script src="scripts/chamber.js" defer></script>
 
-<!-- External JavaScript -->
-<script src="scripts/weather.js" defer></script>
-<script src="scripts/spotlight.js" defer></script>
-<script src="scripts/chamber.js" defer></script>
+  <script>
+    document.getElementById('copyright-year').textContent = new Date().getFullYear();
+    document.getElementById('last-modified').textContent = new Date(document.lastModified).toLocaleString();
 
-<!-- Footer Script -->
-<script>
-  document.getElementById('copyright-year').textContent = new Date().getFullYear();
-  document.getElementById('last-modified').textContent = new Date(document.lastModified).toLocaleString();
-
-  function updateCurrentTime() {
-    const now = new Date();
-    document.getElementById('current-time').textContent = now.toLocaleTimeString();
-  }
-  updateCurrentTime();
-  setInterval(updateCurrentTime, 1000);
-</script>
-
+    function updateCurrentTime() {
+      const now = new Date();
+      document.getElementById('current-time').textContent = now.toLocaleTimeString();
+    }
+    updateCurrentTime();
+    setInterval(updateCurrentTime, 1000);
+  </script>
 </body>
 </html>
