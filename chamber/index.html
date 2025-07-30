@@ -1,129 +1,27 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Home of members for the Johannesburg Chamber of Commerce. Find local businesses and services." />
-  <meta name="author" content="Maisela Manhla Madise" />
-  <title>Chamber of Commerce Home</title>
-  <link rel="stylesheet" href="styles/chamber.css" />
-  <style>
-   
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0; padding: 0;
-      background: #f9f9f9;
-      color: #333;
-    }
-    header, footer {
-      background: #004d40;
-      color: white;
-      padding: 1rem;
-      text-align: center;
-    }
-    nav a {
-      color: white;
-      margin: 0 1rem;
-      text-decoration: none;
-      font-weight: bold;
-      outline: 2px solid #004d40; /* Fixed outline with numeric value */
-      outline-offset: 2px;
-    }
-    nav a:hover, nav a:focus {
-      background-color: #00332f; /* Darker teal for hover/focus */
-      border-radius: 0.5px;
-      outline-color: #ff6600; /* highlight on focus */
-      outline-offset: 4px;
-    }
-    main {
-      max-width: 1200px;
-      margin: auto;
-      padding: 1rem;
-    }
-    .hero {
-      position: relative;
-      background: url('images/chamber.jpeg') center/cover no-repeat;
-      height: 300px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      text-shadow: 0 0 5px black;
-      margin-bottom: 2rem;
-    }
-    .hero a {
-      background: #ff6600;
-      padding: 1rem 2rem;
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 5px;
-      box-shadow: 0 3px 6px rgba(0,0,0,0.3);
-    }
-    section {
-      margin-bottom: 2rem;
-      background: white;
-      padding: 1rem;
-      border-radius: 8px;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
-    }
-    .events ul {
-      list-style: none;
-      padding: 0;
-    }
-    .events li {
-      margin-bottom: 0.5rem;
-    }
-    .weather {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-    .current-weather, .forecast {
-      flex: 1 1 200px;
-    }
-    .forecast-day {
-      background: #e3f2fd;
-      margin: 0.5rem 0;
-      padding: 0.5rem;
-      border-radius: 5px;
-    }
-    .spotlights {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      justify-content: center;
-    }
-    .spotlight-card {
-      background: #fff3e0;
-      border: 1px solid #ffcc80;
-      border-radius: 8px;
-      padding: 1rem;
-      width: 300px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      text-align: center;
-    }
-    .spotlight-card img {
-      max-width: 100px;
-      height: auto;
-      margin-bottom: 1rem;
-    }
-    /* Responsive */
-    @media (max-width: 600px) {
-      .weather {
-        flex-direction: column;
-      }
-      .spotlights {
-        flex-direction: column;
-        align-items: center;
-      }
-    }
-  </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Connect with local businesses, explore events, and discover opportunities at the Johannesburg Chamber of Commerce.">
+  <meta name="author" content="Maisela Manhla Madise">
+  <title>Johannesburg Chamber of Commerce | Home</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+  <!-- Open Graph Metadata -->
+  <meta property="og:title" content="Johannesburg Chamber of Commerce">
+  <meta property="og:description" content="Supporting businesses, hosting events, and building community in Johannesburg.">
+  <meta property="og:image" content="images/chamber.jpeg">
+  <meta property="og:url" content="https://yourchamberurl.com">
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="styles/chamber.css">
 </head>
 <body>
 
 <header>
-  <h1>Welcome to the Chamber of Commerce</h1>
   <nav>
     <a href="index.html">Home</a>
     <a href="directory.html">Directory</a>
@@ -133,6 +31,8 @@
 </header>
 
 <main>
+  <h1>Welcome to the Johannesburg Chamber of Commerce</h1>
+
   <section class="hero">
     <a href="join.html" role="button" aria-label="Join the Chamber Today">Join the Chamber Today!</a>
   </section>
@@ -173,12 +73,13 @@
   <p>Current Time: <span id="current-time"></span></p>
 </footer>
 
+<!-- External JavaScript -->
 <script src="scripts/weather.js"></script>
 <script src="scripts/spotlight.js"></script>
 <script src="scripts/chamber.js"></script>
 
+<!-- Footer Script -->
 <script>
-  // Dynamic footer info script
   document.getElementById('copyright-year').textContent = new Date().getFullYear();
   document.getElementById('last-modified').textContent = new Date(document.lastModified).toLocaleString();
 

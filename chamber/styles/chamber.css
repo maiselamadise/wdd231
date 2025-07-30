@@ -1,4 +1,4 @@
-/* Basic CSS Reset */
+/* ---------------- GLOBAL RESET & BASE ---------------- */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -10,27 +10,23 @@ body {
   line-height: 1.6;
   color: #333;
   background-color: #f4f4f4;
-  min-height: 100vh; /* Ensure body takes full viewport height */
+  min-height: 100vh;
   display: flex;
-  flex-direction: column; /* For sticky footer */
+  flex-direction: column;
 }
 
+/* ---------------- HEADER & NAV ---------------- */
 header {
-  background-color: #004d40; /* Dark Teal */
+  background-color: #004d40;
   color: #fff;
   padding: 1rem 0;
   text-align: center;
   box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
-header h1 {
-  margin-bottom: 0.5rem;
-}
-
 nav {
-  background-color: #00796b; /* Medium Teal */
+  background-color: #00796b;
   padding: 0.5rem 0;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 nav ul {
@@ -38,6 +34,7 @@ nav ul {
   display: flex;
   justify-content: center;
   gap: 1.5rem;
+  flex-wrap: wrap;
 }
 
 nav ul li a {
@@ -49,26 +46,106 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-  background-color: #004d40; /* Darker Teal on hover */
+  background-color: #004d40;
   border-radius: 5px;
 }
 
 nav ul li a:focus {
-  outline: 3px solid #004d40;
+  outline: 3px solid #ff6600;
   outline-offset: 2px;
 }
 
+/* ---------------- MAIN ---------------- */
 main {
-  flex: 1; /* Allows main content to grow and push footer down */
+  flex: 1;
   padding: 20px;
   max-width: 1200px;
   margin: 20px auto;
   background-color: #fff;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  transition: all 0.3s ease;
 }
 
+/* ---------------- HOMEPAGE SECTIONS ---------------- */
+.hero {
+  background: url('../images/chamber.jpeg') center/cover no-repeat;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-shadow: 0 0 5px black;
+  margin-bottom: 2rem;
+}
+
+.hero a {
+  background: #ff6600;
+  padding: 1rem 2rem;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.3);
+}
+
+section {
+  margin-bottom: 2rem;
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
+
+.events ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.events li {
+  margin-bottom: 0.5rem;
+}
+
+.weather {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.current-weather, .forecast {
+  flex: 1 1 200px;
+}
+
+.forecast-day {
+  background: #e3f2fd;
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+
+.spotlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.spotlight-card {
+  background: #fff3e0;
+  border: 1px solid #ffcc80;
+  border-radius: 8px;
+  padding: 1rem;
+  width: 300px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.spotlight-card img {
+  max-width: 100px;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+/* ---------------- DIRECTORY VIEW TOGGLE ---------------- */
 .view-toggle {
   text-align: center;
   margin-bottom: 20px;
@@ -101,12 +178,11 @@ main {
   box-shadow: inset 0 0 5px rgba(0,0,0,0.3);
 }
 
-/* Grid View Styles */
+/* ---------------- GRID VIEW ---------------- */
 .member-display.grid-view {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 20px;
-  transition: all 0.3s ease;
 }
 
 .member-card {
@@ -116,23 +192,15 @@ main {
   padding: 15px;
   text-align: center;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.member-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 
 .member-card img {
   max-width: 100%;
-  height: 150px; /* Fixed height for consistency */
-  object-fit: contain; /* Ensures image fits without cropping */
+  height: 150px;
+  object-fit: contain;
   border-radius: 4px;
   margin-bottom: 10px;
-  background-color: #e0e0e0; /* Placeholder background */
-  opacity: 0;
-  animation: fadeIn 0.6s forwards;
+  background-color: #e0e0e0;
 }
 
 .member-card h3 {
@@ -157,17 +225,11 @@ main {
   text-decoration: underline;
 }
 
-.member-card a:focus {
-  outline: 3px solid #004d40;
-  outline-offset: 2px;
-}
-
-/* List View Styles */
+/* ---------------- LIST VIEW ---------------- */
 .member-display.list-view {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  transition: all 0.3s ease;
 }
 
 .member-list-item {
@@ -178,23 +240,14 @@ main {
   display: flex;
   align-items: center;
   gap: 15px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
-  transition: background-color 0.2s ease;
-}
-
-.member-list-item:hover {
-  background-color: #eef;
 }
 
 .member-list-item img {
-  width: 60px; /* Smaller image for list view */
+  width: 60px;
   height: 60px;
   object-fit: contain;
   border-radius: 4px;
-  flex-shrink: 0; /* Prevent image from shrinking */
-  background-color: #e0e0e0; /* Placeholder background */
-  opacity: 0;
-  animation: fadeIn 0.6s forwards;
+  background-color: #e0e0e0;
 }
 
 .member-info {
@@ -218,26 +271,13 @@ main {
   font-size: 0.85rem;
 }
 
-.member-info a:hover {
-  text-decoration: underline;
-}
-
-.member-info a:focus {
-  outline: 3px solid #004d40;
-  outline-offset: 2px;
-}
-
+/* ---------------- FOOTER ---------------- */
 footer {
   background-color: #004d40;
   color: #fff;
   text-align: center;
   padding: 1.5rem 0;
-  margin-top: auto; /* Pushes footer to the bottom */
-  box-shadow: 0 -2px 5px rgba(0,0,0,0.2);
-  /* Uncomment below to make footer sticky */
-  /* position: sticky;
-  bottom: 0;
-  z-index: 1000; */
+  margin-top: auto;
 }
 
 footer p {
@@ -245,46 +285,44 @@ footer p {
   font-size: 0.9rem;
 }
 
-/* Fade-in animation */
+/* ---------------- ANIMATIONS ---------------- */
 @keyframes fadeIn {
-  to {
-    opacity: 1;
-  }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
-/* Responsive adjustments */
+/* ---------------- RESPONSIVE ---------------- */
 @media (max-width: 768px) {
   nav ul {
-      flex-direction: column;
-      gap: 0;
+    flex-direction: column;
+    gap: 0;
   }
 
   nav ul li a {
-      padding: 0.8rem 1rem;
-      text-align: center;
+    text-align: center;
   }
 
   .member-display.grid-view {
-      grid-template-columns: 1fr; /* Single column for smaller screens */
+    grid-template-columns: 1fr;
   }
 
   .member-list-item {
-      flex-direction: column;
-      text-align: center;
+    flex-direction: column;
+    text-align: center;
   }
 
   .member-list-item img {
-      margin-bottom: 10px;
+    margin-bottom: 10px;
   }
 }
 
 @media (max-width: 480px) {
   header h1 {
-      font-size: 1.8rem;
+    font-size: 1.8rem;
   }
 
   .view-toggle button {
-      padding: 8px 15px;
-      font-size: 0.9rem;
+    padding: 8px 15px;
+    font-size: 0.9rem;
   }
 }
