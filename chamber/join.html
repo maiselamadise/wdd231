@@ -8,21 +8,20 @@
 
   <title>Join the Johannesburg Chamber of Commerce</title>
 
-  <!-- Open Graph meta tags -->
+  <!-- Open Graph Meta Tags -->
   <meta property="og:title" content="Join the Johannesburg Chamber of Commerce">
   <meta property="og:description" content="Get access to exclusive events, networking, and growth opportunities with our membership options.">
-  <meta property="og:image" content="images/chamber-preview.jpg">
-  <meta property="og:url" content="https://www.joburgchamber.org/join.html">
+  <meta property="og:image" content="images/chamber.jpeg">
+  <meta property="og:url" content="join.html">
   <meta property="og:type" content="website">
 
-  <!-- External assets -->
   <link rel="stylesheet" href="styles/chamber.css">
   <script defer src="scripts/chamber.js"></script>
   <link rel="icon" href="favicon.ico">
 </head>
 <body>
   <header>
-    <h1>Johannesburg Chamber of Commerce</h1>
+    <p>Johannesburg Chamber of Commerce</p>
   </header>
 
   <nav aria-label="Main navigation">
@@ -68,7 +67,6 @@
       <textarea id="description" name="description" rows="5"></textarea>
 
       <input type="hidden" name="timestamp" id="timestamp">
-
       <input type="submit" value="Join Now">
     </form>
 
@@ -162,7 +160,7 @@
       document.getElementById(id).style.display = 'none';
     }
 
-    // Close modal on ESC key or outside click
+    // ESC key and click outside to close modal
     window.addEventListener('keydown', function (e) {
       if (e.key === 'Escape') {
         document.querySelectorAll('.modal').forEach(modal => modal.style.display = 'none');
