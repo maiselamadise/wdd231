@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Join the Johannesburg Chamber of Commerce to access networking opportunities and business resources." />
+  <meta name="author" content="Maisela Manhla Madise" />
+  <title>Join Chamber</title>
+
+  <link rel="stylesheet" href="styles/chamber.css" />
+  <script defer src="scripts/chamber.js"></script>
+  <link rel="icon" href="favicon.ico" />
+</head>
+<body>
+  <header>
+    <h1>Johannesburg Chamber of Commerce</h1>
+  </header>
+
+  <nav aria-label="Main navigation">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="directory.html">Directory</a></li>
+      <li><a href="join.html" class="active">Join</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <h1>Join Our Chamber of Commerce</h1>
+    <form method="get" action="thankyou.html">
+      <label for="firstName">First Name:</label>
+      <input type="text" id="firstName" name="firstName" required autocomplete="given-name" />
+
+      <label for="lastName">Last Name:</label>
+      <input type="text" id="lastName" name="lastName" required autocomplete="family-name" />
+
+      <label for="orgTitle">Organizational Title:</label>
+      <input type="text" id="orgTitle" name="orgTitle" pattern="[A-Za-z\s\-]{7,}" title="At least 7 characters, letters, spaces, or hyphens" autocomplete="organization-title" />
+
+      <label for="email">Email Address:</label>
+      <input type="email" id="email" name="email" required autocomplete="email" placeholder="john.doe@company.co.za" />
+
+      <label for="mobile">Mobile Phone:</label>
+      <input type="tel" id="mobile" name="mobile" required autocomplete="tel" />
+
+      <label for="organization">Organization Name:</label>
+      <input type="text" id="organization" name="organization" required autocomplete="organization" />
+
+      <label for="membership">Membership Level:</label>
+      <select id="membership" name="membership">
+        <option value="NP">NP Membership (Free)</option>
+        <option value="Bronze">Bronze Membership</option>
+        <option value="Silver">Silver Membership</option>
+        <option value="Gold">Gold Membership</option>
+      </select>
+
+      <label for="description">Business Description:</label>
+      <textarea id="description" name="description" rows="5"></textarea>
+
+      <input type="hidden" name="timestamp" id="timestamp" />
+
+      <input type="submit" value="Join Now" />
+    </form>
+
+    <section class="membership-cards">
+      <div class="card" id="np-card">
+        <h3>NP Membership</h3>
+        <a href="#" onclick="openModal('np-modal')">View Benefits</a>
+      </div>
+      <div class="card" id="bronze-card">
+        <h3>Bronze Membership</h3>
+        <a href="#" onclick="openModal('bronze-modal')">View Benefits</a>
+      </div>
+      <div class="card" id="silver-card">
+        <h3>Silver Membership</h3>
+        <a href="#" onclick="openModal('silver-modal')">View Benefits</a>
+      </div>
+      <div class="card" id="gold-card">
+        <h3>Gold Membership</h3>
+        <a href="#" onclick="openModal('gold-modal')">View Benefits</a>
+      </div>
+    </section>
+
+    <!-- Modals -->
+    <div class="modal" id="np-modal" role="dialog" aria-modal="true" aria-labelledby="np-title">
+      <div class="modal-content">
+        <h4 id="np-title">NP Membership Benefits</h4>
+        <p>Free events, networking for nonprofits.</p>
+        <button onclick="closeModal('np-modal')">Close</button>
+      </div>
+    </div>
+
+    <div class="modal" id="bronze-modal" role="dialog" aria-modal="true" aria-labelledby="bronze-title">
+      <div class="modal-content">
+        <h4 id="bronze-title">Bronze Membership Benefits</h4>
+        <p>Basic training, listing in directory.</p>
+        <button onclick="closeModal('bronze-modal')">Close</button>
+      </div>
+    </div>
+
+    <div class="modal" id="silver-modal" role="dialog" aria-modal="true" aria-labelledby="silver-title">
+      <div class="modal-content">
+        <h4 id="silver-title">Silver Membership Benefits</h4>
+        <p>Spotlight advertising, event discounts.</p>
+        <button onclick="closeModal('silver-modal')">Close</button>
+      </div>
+    </div>
+
+    <div class="modal" id="gold-modal" role="dialog" aria-modal="true" aria-labelledby="gold-title">
+      <div class="modal-content">
+        <h4 id="gold-title">Gold Membership Benefits</h4>
+        <p>All benefits plus priority promotions.</p>
+        <button onclick="closeModal('gold-modal')">Close</button>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="copyright-year"></span> Johannesburg Chamber of Commerce</p>
+    <p>Phone: +27 84 417 8859 | Email: info@joburgchamber.org</p>
+    <p>Maisela Manhla Madise | WDD 231</p>
+    <p>Last Modification: <span id="last-modified"></span></p>
+    <p>Current Time: <span id="current-time"></span></p>
+  </footer>
+
+  <script>
+    // Footer time updates
+    document.getElementById('copyright-year').textContent = new Date().getFullYear();
+    document.getElementById('last-modified').textContent = new Date(document.lastModified).toLocaleString();
+
+    function updateCurrentTime() {
+      const now = new Date();
+      document.getElementById('current-time').textContent = now.toLocaleTimeString();
+    }
+    updateCurrentTime();
+    setInterval(updateCurrentTime, 1000);
+
+    // Add timestamp to hidden input
+    document.querySelector('form').addEventListener('submit', function () {
+      document.getElementById('timestamp').value = new Date().toISOString();
+    });
+
+    // Modal functions
+    function openModal(id) {
+      document.getElementById(id).style.display = 'block';
+    }
+
+    function closeModal(id) {
+      document.getElementById(id).style.display = 'none';
+    }
+
+    // Close modal on ESC key
+    window.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        document.querySelectorAll('.modal').forEach(modal => {
+          modal.style.display = 'none';
+        });
+      }
+    });
+  </script>
+</body>
+</html>
