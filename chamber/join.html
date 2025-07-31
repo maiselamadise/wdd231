@@ -1,15 +1,24 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Join the Johannesburg Chamber of Commerce to access networking opportunities and business resources." />
-  <meta name="author" content="Maisela Manhla Madise" />
-  <title>Join Chamber</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Become a member of the Johannesburg Chamber of Commerce to access exclusive events, local business networking, and professional development resources.">
+  <meta name="author" content="Maisela Manhla Madise">
 
-  <link rel="stylesheet" href="styles/chamber.css" />
+  <title>Join the Johannesburg Chamber of Commerce</title>
+
+  <!-- Open Graph meta tags -->
+  <meta property="og:title" content="Join the Johannesburg Chamber of Commerce">
+  <meta property="og:description" content="Get access to exclusive events, networking, and growth opportunities with our membership options.">
+  <meta property="og:image" content="images/chamber-preview.jpg">
+  <meta property="og:url" content="https://www.joburgchamber.org/join.html">
+  <meta property="og:type" content="website">
+
+  <!-- External assets -->
+  <link rel="stylesheet" href="styles/chamber.css">
   <script defer src="scripts/chamber.js"></script>
-  <link rel="icon" href="favicon.ico" />
+  <link rel="icon" href="favicon.ico">
 </head>
 <body>
   <header>
@@ -26,25 +35,26 @@
   </nav>
 
   <main>
-    <h1>Join Our Chamber of Commerce</h1>
+    <h1>Join the Johannesburg Chamber of Commerce</h1>
+
     <form method="get" action="thankyou.html">
       <label for="firstName">First Name:</label>
-      <input type="text" id="firstName" name="firstName" required autocomplete="given-name" />
+      <input type="text" id="firstName" name="firstName" required autocomplete="given-name">
 
       <label for="lastName">Last Name:</label>
-      <input type="text" id="lastName" name="lastName" required autocomplete="family-name" />
+      <input type="text" id="lastName" name="lastName" required autocomplete="family-name">
 
       <label for="orgTitle">Organizational Title:</label>
-      <input type="text" id="orgTitle" name="orgTitle" pattern="[A-Za-z\s\-]{7,}" title="At least 7 characters, letters, spaces, or hyphens" autocomplete="organization-title" />
+      <input type="text" id="orgTitle" name="orgTitle" pattern="[A-Za-z\s\-]{7,}" title="At least 7 characters, letters, spaces, or hyphens" autocomplete="organization-title">
 
       <label for="email">Email Address:</label>
-      <input type="email" id="email" name="email" required autocomplete="email" placeholder="john.doe@company.co.za" />
+      <input type="email" id="email" name="email" required autocomplete="email" placeholder="john.doe@company.co.za">
 
       <label for="mobile">Mobile Phone:</label>
-      <input type="tel" id="mobile" name="mobile" required autocomplete="tel" />
+      <input type="tel" id="mobile" name="mobile" required pattern="^\+27\d{9}$" title="Enter a valid South African number starting with +27" autocomplete="tel">
 
       <label for="organization">Organization Name:</label>
-      <input type="text" id="organization" name="organization" required autocomplete="organization" />
+      <input type="text" id="organization" name="organization" required autocomplete="organization">
 
       <label for="membership">Membership Level:</label>
       <select id="membership" name="membership">
@@ -57,9 +67,9 @@
       <label for="description">Business Description:</label>
       <textarea id="description" name="description" rows="5"></textarea>
 
-      <input type="hidden" name="timestamp" id="timestamp" />
+      <input type="hidden" name="timestamp" id="timestamp">
 
-      <input type="submit" value="Join Now" />
+      <input type="submit" value="Join Now">
     </form>
 
     <section class="membership-cards">
@@ -142,20 +152,27 @@
 
     // Modal functions
     function openModal(id) {
-      document.getElementById(id).style.display = 'block';
+      const modal = document.getElementById(id);
+      modal.style.display = 'block';
+      modal.setAttribute('tabindex', '-1');
+      modal.focus();
     }
 
     function closeModal(id) {
       document.getElementById(id).style.display = 'none';
     }
 
-    // Close modal on ESC key
-    window.addEventListener('keydown', function(e) {
+    // Close modal on ESC key or outside click
+    window.addEventListener('keydown', function (e) {
       if (e.key === 'Escape') {
-        document.querySelectorAll('.modal').forEach(modal => {
-          modal.style.display = 'none';
-        });
+        document.querySelectorAll('.modal').forEach(modal => modal.style.display = 'none');
       }
+    });
+
+    window.addEventListener('click', function (e) {
+      document.querySelectorAll('.modal').forEach(modal => {
+        if (e.target === modal) modal.style.display = 'none';
+      });
     });
   </script>
 </body>
