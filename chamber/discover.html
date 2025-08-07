@@ -17,7 +17,7 @@
       <li><a href="index.html">Home</a></li>
       <li><a href="directory.html">Directory</a></li>
       <li><a href="join.html">Join</a></li>
-      <li><a href="discovery-page.html" aria-current="active">Discovery</a></li>
+      <li><a href="discover.html" aria-current="active">Discover</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
@@ -126,8 +126,26 @@
 </main>
 
 <footer>
-  <p>© 2025 Springfield Chamber of Commerce</p>
+  <p>&copy; <span id="copyright-year"></span> Johannesburg Chamber of Commerce</p>
+  <p>Phone: +27 84 417 8859 | Email: info@joburgchamber.org</p>
+  <p>Maisela Manhla Madise | WDD 231</p>
+  <p>Last Modification: <span id="last-modified"></span></p>
+  <p>Current Time: <span id="current-time"></span></p>
 </footer>
+
+<script src="scripts/chamber.js" defer></script>
+
+<script>
+  document.getElementById('copyright-year').textContent = new Date().getFullYear();
+  document.getElementById('last-modified').textContent = new Date(document.lastModified).toLocaleString();
+
+  function updateCurrentTime() {
+    const now = new Date();
+    document.getElementById('current-time').textContent = now.toLocaleTimeString();
+  }
+  updateCurrentTime();
+  setInterval(updateCurrentTime, 1000);
+</script>
 
 </body>
 </html>
