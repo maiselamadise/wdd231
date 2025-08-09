@@ -6,13 +6,23 @@
   <meta name="author" content="Maisela Manhla Madise" />
   <meta name="description" content="Discover local businesses and attractions in Johannesburg with the Chamber Discovery page." />
   <meta name="keywords" content="Johannesburg, Chamber, Local Businesses, Directory, Tourism, Discover" />
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Chamber of Commerce Discover" />
+  <meta property="og:description" content="Explore Johannesburg's local businesses and attractions through our Chamber Discovery page." />
+  <meta property="og:image" content="images/discover-og.jpg" />
+  <meta property="og:url" content="https://www.joburgchamber.org/discover.html" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+
   <title>Chamber of Commerce Discover</title>
   <link rel="stylesheet" href="styles/chamber.css" />
 </head>
 <body>
 
 <header>
-  <h1>Johannesburg Chamber Discover</h1>
+  <h1>Chamber of Commerce Discover</h1>
   <p>Connecting Businesses, Building Community</p>
   <nav role="navigation" aria-label="Main navigation">
     <ul>
@@ -26,7 +36,7 @@
 </header>
 
 <main role="main">
-  <section id="last-visit-message" style="margin: 1rem 0; font-style: italic; color: #444;" aria-live="polite"></section>
+  <section id="last-visit-message" aria-live="polite"></section>
 
   <section class="discover-grid" id="discover-container" aria-label="Discover businesses and attractions">
     <!-- Cards will be dynamically loaded -->
@@ -41,7 +51,6 @@
   <p>Current Time: <time id="current-time"></time></p>
 </footer>
 
- <script src="scripts/discover.js" defer></script>
-
+<script src="scripts/discover.js" defer></script>
 </body>
 </html>
