@@ -4,8 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="Maisela Manhla Madise">
-  <meta name="description" content="Explore local businesses and attractions in Johannesburg. Find local gems, opportunities, and more in our Chamber of Commerce directory.">
-  <meta name="keywords" content="Johannesburg, businesses, chamber of commerce, local, South Africa, directory">
+  <meta name="description" content="Explore top businesses and attractions in Johannesburg. Discover opportunities, local gems, and community growth through our Chamber directory.">
 
   <title>Discover Johannesburg Businesses | Chamber of Commerce</title>
 
@@ -15,11 +14,11 @@
   <!-- Open Graph Meta Tags -->
   <meta property="og:title" content="Discover Johannesburg Businesses">
   <meta property="og:description" content="Explore local businesses and attractions through the Johannesburg Chamber of Commerce Discover page.">
-  <meta property="og:image" content="https://your-real-domain.com/images/og-preview.jpg">
-  <meta property="og:url" content="https://your-real-domain.com/discover.html">
+  <meta property="og:image" content="images/og-preview.jpg"> <!-- ✅ LOCAL PATH -->
+  <meta property="og:url" content="discover.html"> <!-- ✅ RELATIVE OR REAL DOMAIN -->
 
   <!-- Styles -->
-  <link rel="stylesheet" href="styles/chamber.css">
+  <link rel="stylesheet" href="styles/chamber.css"> <!-- ✅ Ensure file exists -->
 </head>
 
 <body>
@@ -39,16 +38,18 @@
 </header>
 
 <main>
-  <h1>Discover Johannesburg Businesses | Chamber of Commerce</h1>
+  <!-- ✅ Page-specific H1 inside main -->
+  <h1>Discover Johannesburg Businesses</h1>
 
+  <!-- ✅ Last Visit Section -->
   <section id="last-visit-message" aria-live="polite">
     <h2 class="visually-hidden">Last Visit Message</h2>
   </section>
 
+  <!-- ✅ Business Cards Section -->
   <h2>Featured Local Businesses</h2>
-
-  <section class="discover-grid" id="discover-container" aria-label="Discover business and attractions">
-    <!-- Business cards will be dynamically inserted here by discover.js -->
+  <section class="discover-grid" id="discover-container" aria-label="Business cards">
+    <!-- Populated dynamically via discover.js -->
   </section>
 </main>
 
@@ -56,7 +57,7 @@
   <p>&copy; <span id="copyright-year"></span> Johannesburg Chamber of Commerce</p>
   <address>
     Phone: +27 84 417 8859<br>
-    Email: <a href="mailto:info@jcc.org">info@jcc.org</a>
+    Email: <a href="mailto:info@joburgchamber.org">info@joburgchamber.org</a>
   </address>
   <p>Maisela Manhla Madise | WDD 231</p>
   <p>Last Modification: <time id="last-modified" datetime="2025-08-09">2025-08-09</time></p>
@@ -64,7 +65,7 @@
 </footer>
 
 <noscript>
-  <p>JavaScript is required to view this content. Please enable JavaScript in your browser.</p>
+  <p>JavaScript is required for full functionality. Please enable JavaScript.</p>
 </noscript>
 
 <script src="scripts/discover.js" defer></script>
