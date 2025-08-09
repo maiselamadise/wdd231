@@ -11,14 +11,21 @@
   <!-- Favicon -->
   <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://www.joburgchamber.org/discover.html">
+
   <!-- Open Graph Meta Tags -->
   <meta property="og:title" content="Discover Johannesburg Businesses">
   <meta property="og:description" content="Explore local businesses and attractions through the Johannesburg Chamber of Commerce Discover page.">
-  <meta property="og:image" content="images/og-preview.jpg"> <!-- ✅ LOCAL PATH -->
-  <meta property="og:url" content="discover.html"> <!-- ✅ RELATIVE OR REAL DOMAIN -->
+  <meta property="og:image" content="https://www.joburgchamber.org/images/og-preview.jpg">
+  <meta property="og:url" content="https://www.joburgchamber.org/discover.html">
+  <meta property="og:type" content="website">
 
   <!-- Styles -->
-  <link rel="stylesheet" href="styles/chamber.css"> <!-- ✅ Ensure file exists -->
+  <link rel="stylesheet" href="styles/chamber.css">
+
+  <!-- Preload Script (optional performance boost) -->
+  <link rel="preload" href="scripts/discover.js" as="script">
 </head>
 
 <body>
@@ -38,15 +45,15 @@
 </header>
 
 <main>
-  <!-- ✅ Page-specific H1 inside main -->
+  <!-- Page-specific H1 inside main -->
   <h1>Discover Johannesburg Businesses</h1>
 
-  <!-- ✅ Last Visit Section -->
+  <!-- Last Visit Section -->
   <section id="last-visit-message" aria-live="polite">
     <h2 class="visually-hidden">Last Visit Message</h2>
   </section>
 
-  <!-- ✅ Business Cards Section -->
+  <!-- Business Cards Section -->
   <h2>Featured Local Businesses</h2>
   <section class="discover-grid" id="discover-container" aria-label="Business cards">
     <!-- Populated dynamically via discover.js -->
@@ -65,6 +72,10 @@
 </footer>
 
 <noscript>
+  <style>
+    /* Visually style fallback */
+    body { background-color: #f8f8f8; color: #333; font-family: sans-serif; padding: 2rem; }
+  </style>
   <p>JavaScript is required for full functionality. Please enable JavaScript.</p>
 </noscript>
 
