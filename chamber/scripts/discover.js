@@ -4,15 +4,19 @@ document.getElementById('copyright-year').textContent = new Date().getFullYear()
 // ✅ Last modified date
 const lastModifiedDate = new Date(document.lastModified);
 const lastModifiedElement = document.getElementById('last-modified');
+// Display user-friendly format inside element
 lastModifiedElement.textContent = lastModifiedDate.toLocaleString();
+// Set machine-readable ISO format for datetime attribute (full ISO string)
 lastModifiedElement.setAttribute('datetime', lastModifiedDate.toISOString());
 
 // ✅ Current time
 function updateCurrentTime() {
   const now = new Date();
   const currentTimeElement = document.getElementById('current-time');
+  // Show just the time in a friendly format
   currentTimeElement.textContent = now.toLocaleTimeString();
-  currentTimeElement.setAttribute('datetime', now.toISOString().slice(0, 16));
+  // Set full ISO string for datetime attribute (required format)
+  currentTimeElement.setAttribute('datetime', now.toISOString());
 }
 updateCurrentTime();
 setInterval(updateCurrentTime, 1000);
