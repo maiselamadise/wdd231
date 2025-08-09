@@ -1,18 +1,30 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="author" content="Maisela Manhla Madise" />
-  <meta name="description" content="Discover local businesses and attractions in Johannesburg with the Chamber Discovery page." />
-  <title>Chamber Discover</title>
-  <link rel="stylesheet" href="styles/chamber.css" />
- 
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Maisela Manhla Madise">
+  <meta name="description" content="Explore top businesses and attractions in Johannesburg. Discover opportunities, local gems, and community growth through our Chamber directory.">
+  
+  <title>Discover Johannesburg Businesses | Chamber of Commerce</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Discover Johannesburg Businesses">
+  <meta property="og:description" content="Explore local businesses and attractions through the Johannesburg Chamber of Commerce Discover page.">
+  <meta property="og:image" content="images/og-preview.jpg">
+  <meta property="og:url" content="https://yourdomain.com/discover.html">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles/chamber.css">
 </head>
+
 <body>
 
 <header>
-  <h1>Johannesburg Chamber Discover</h1>
+  <h1>Johannesburg Chamber of Commerce</h1>
   <p>Connecting Businesses, Building Community</p>
   <nav role="navigation" aria-label="Main navigation">
     <ul>
@@ -26,10 +38,12 @@
 </header>
 
 <main role="main">
-  <section id="last-visit-message" style="margin: 1rem 0; font-style: italic; color: #444;" aria-live="polite"></section>
+  <h1>Discover Johannesburg Businesses</h1>
+
+  <section id="last-visit-message" aria-live="polite"></section>
 
   <section class="discover-grid" id="discover-container" aria-label="Discover business and attractions">
-    <!-- Cards will be dynamically loaded -->
+    <!-- Business cards will be dynamically inserted here -->
   </section>
 </main>
 
@@ -41,75 +55,8 @@
   <p>Current Time: <time id="current-time"></time></p>
 </footer>
 
-<script>
-  // Dates and time display
-  document.getElementById('copyright-year').textContent = new Date().getFullYear();
-  document.getElementById('last-modified').textContent = new Date(document.lastModified).toLocaleString();
-
-  function updateCurrentTime() {
-    const now = new Date();
-    document.getElementById('current-time').textContent = now.toLocaleTimeString();
-  }
-  updateCurrentTime();
-  setInterval(updateCurrentTime, 1000);
-
-  // Last visit message using localStorage
-  const lastVisit = localStorage.getItem('lastVisit');
-  const message = document.getElementById('last-visit-message');
-  if (lastVisit) {
-    message.textContent = `Welcome back! Your last visit was on ${lastVisit}.`;
-  } else {
-    message.textContent = "Welcome to your first visit to Chamber Discovery!";
-  }
-  localStorage.setItem('lastVisit', new Date().toLocaleString());
-
-  // Render business cards dynamically
-  document.addEventListener('DOMContentLoaded', () => {
-    fetch('data/businesses.json')
-      .then(response => {
-        if (!response.ok) throw new Error('Network response not ok');
-        return response.json();
-      })
-      .then(businesses => {
-        const container = document.getElementById('discover-container');
-        businesses.forEach((biz, index) => {
-          const article = document.createElement('article');
-          article.className = 'discover-card';
-          article.setAttribute('aria-labelledby', `card${index + 1}-title`);
-
-          article.innerHTML = `
-            <figure>
-              <img src="images/${biz.imageFileName}" alt="Image of ${biz.name}" loading="lazy" width="400" height="250" />
-              <figcaption class="sr-only">${biz.name} image</figcaption>
-            </figure>
-            <h2 id="card${index + 1}-title">${biz.name} <span class="membership-level">(${biz.membershipLevel} Member)</span></h2>
-            <address>${biz.address}</address>
-            <p>${biz.description}</p>
-            <p>Phone: <a href="tel:${biz.phoneNumber.replace(/\s+/g, '')}">${biz.phoneNumber}</a></p>
-            <p>Website: <a href="${biz.websiteURL}" target="_blank" rel="noopener noreferrer">${biz.websiteURL}</a></p>
-            <button type="button" class="learn-more" data-name="${biz.name}">Learn More</button>
-          `;
-          container.appendChild(article);
-        });
-
-        // Attach event listeners after cards are added
-        document.querySelectorAll('.learn-more').forEach(button => {
-          button.addEventListener('click', (e) => {
-            const name = e.target.getAttribute('data-name');
-            alert(`More info about ${name} coming soon!`);
-          });
-        });
-      })
-      .catch(error => {
-        console.error('Failed to load businesses.json:', error);
-        document.getElementById('discover-container').innerHTML = `
-          <article class="discover-card" style="grid-column: span 3;">
-            <h2>Oops!</h2>
-            <p>We couldn’t load the businesses right now. Please try refreshing the page or come back later.</p>
-          </article>`;
-      });
-  });
-</script>
+<!-- External JavaScript -->
+<script src="scripts/discover.js" defer></script>
 
 </body>
 </html>
