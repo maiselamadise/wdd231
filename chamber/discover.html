@@ -27,7 +27,7 @@
 <header>
   <h1>Johannesburg Chamber of Commerce</h1>
   <p>Connecting Businesses, Building Community</p>
-  <nav role="navigation" aria-label="Main navigation">
+  <nav aria-label="Main navigation">
     <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="directory.html">Directory</a></li>
@@ -38,36 +38,35 @@
   </nav>
 </header>
 
-<main role="main">
+<main>
   <h1>Discover Johannesburg Businesses | Chamber of Commerce</h1>
 
-  <section id="last-visit-message" aria-live="polite"></section>
+  <section id="last-visit-message" aria-live="polite">
+    <h2 class="visually-hidden">Last Visit Message</h2>
+  </section>
 
   <h2>Featured Local Businesses</h2>
-  <h2>Tourist Attractions</h2>
-  <h2>Community Highlights</h2>
 
   <section class="discover-grid" id="discover-container" aria-label="Discover business and attractions">
-    <!-- Business cards will be dynamically inserted here -->
+    <!-- Business cards will be dynamically inserted here by discover.js -->
   </section>
 </main>
 
-<footer role="contentinfo">
+<footer>
   <p>&copy; <span id="copyright-year"></span> Johannesburg Chamber of Commerce</p>
   <address>
     Phone: +27 84 417 8859<br>
     Email: <a href="mailto:info@jcc.org">info@jcc.org</a>
   </address>
   <p>Maisela Manhla Madise | WDD 231</p>
-  <p>Last Modification: <time id="last-modified"></time></p>
-  <p>Current Time: <time id="current-time"></time></p>
+  <p>Last Modification: <time id="last-modified" datetime="2025-08-09">2025-08-09</time></p>
+  <p>Current Time: <time id="current-time" datetime="2025-08-09T12:00">12:00</time></p>
 </footer>
 
 <noscript>
   <p>JavaScript is required to view this content. Please enable JavaScript in your browser.</p>
 </noscript>
 
-<!-- External JavaScript -->
 <script src="scripts/discover.js" defer></script>
 
 </body>

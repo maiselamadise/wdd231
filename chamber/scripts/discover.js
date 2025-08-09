@@ -1,29 +1,39 @@
-// Dates and time display
+// ✅ Update copyright year
 document.getElementById('copyright-year').textContent = new Date().getFullYear();
-document.getElementById('last-modified').textContent = new Date(document.lastModified).toLocaleString();
 
+// ✅ Set last modified date with ISO datetime attribute
+const lastModifiedDate = new Date(document.lastModified);
+document.getElementById('last-modified').textContent = lastModifiedDate.toLocaleString();
+document.getElementById('last-modified').setAttribute('datetime', lastModifiedDate.toISOString());
+
+// ✅ Real-time current clock with ISO datetime attribute
 function updateCurrentTime() {
   const now = new Date();
   document.getElementById('current-time').textContent = now.toLocaleTimeString();
+  document.getElementById('current-time').setAttribute('datetime', now.toISOString().slice(0, 16));
 }
 updateCurrentTime();
 setInterval(updateCurrentTime, 1000);
 
-// Last visit message using localStorage
-const lastVisit = localStorage.getItem('lastVisit');
+// ✅ Last visit logic using localStorage
+const lastVisitKey = 'lastVisit';
+const lastVisit = localStorage.getItem(lastVisitKey);
 const message = document.getElementById('last-visit-message');
+
 if (lastVisit) {
-  message.textContent = `Welcome back! Your last visit was on ${lastVisit}.`;
+  const last = new Date(lastVisit);
+  const daysAgo = Math.floor((Date.now() - last.getTime()) / (1000 * 60 * 60 * 24));
+  message.textContent = `Welcome back! Your last visit was ${daysAgo} day(s) ago (${last.toLocaleString()}).`;
 } else {
   message.textContent = "Welcome to your first visit to Chamber Discovery!";
 }
-localStorage.setItem('lastVisit', new Date().toLocaleString());
+localStorage.setItem(lastVisitKey, new Date().toISOString());
 
-// Fetch and render business data
+// ✅ Fetch business cards from JSON file
 document.addEventListener('DOMContentLoaded', () => {
   fetch('data/businesses.json')
     .then(response => {
-      if (!response.ok) throw new Error('Failed to fetch JSON');
+      if (!response.ok) throw new Error('Failed to fetch businesses data.');
       return response.json();
     })
     .then(businesses => {
@@ -31,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       businesses.forEach((biz, index) => {
         const imageFile = biz.imageFileName.toLowerCase();
-        const website = biz.websiteURL.startsWith("http") ? biz.websiteURL : `https://${biz.websiteURL}`;
+        const website = biz.websiteURL.startsWith('http') ? biz.websiteURL : `https://${biz.websiteURL}`;
         const phone = biz.phoneNumber.replace(/\s+/g, '');
 
         const article = document.createElement('article');
@@ -40,8 +50,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         article.innerHTML = `
           <figure>
-            <img src="images/${imageFile}" alt="Image of ${biz.name}" loading="lazy" width="400" height="250">
-            <figcaption class="sr-only">${biz.name} image</figcaption>
+            <img src="images/${imageFile}" 
+                 alt="Image of ${biz.name}" 
+                 loading="lazy" width="400" height="250">
+            <figcaption class="sr-only">${biz.name} storefront</figcaption>
           </figure>
           <h2 id="card${index + 1}-title">${biz.name} <span class="membership-level">(${biz.membershipLevel} Member)</span></h2>
           <address>${biz.address}</address>
@@ -54,10 +66,10 @@ document.addEventListener('DOMContentLoaded', () => {
         container.appendChild(article);
       });
 
-      // Button event
+      // ✅ Button click event
       document.querySelectorAll('.learn-more').forEach(button => {
         button.addEventListener('click', e => {
-          const name = e.target.getAttribute('data-name');
+          const name = e.currentTarget.getAttribute('data-name');
           alert(`More info about ${name} coming soon!`);
         });
       });
