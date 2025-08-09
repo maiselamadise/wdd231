@@ -4,7 +4,7 @@
       "address": "Rivonia Rd & Sandton Dr, Sandton, Johannesburg",
       "phoneNumber": "+27 11 217 6000",
       "websiteURL": "https://www.sandtoncity.com/",
-      "imageFileName": "SantonCity.jpeg",
+      "imageFileName": "santoncity.webp",
       "membershipLevel": "Gold",
       "description": "Premium shopping mall offering a wide range of international and local brands."
     },
@@ -13,7 +13,7 @@
       "address": "Judith Rd, Emmarentia, Johannesburg",
       "phoneNumber": "+27 11 482 4797",
       "websiteURL": "https://mk.org.za/",
-      "imageFileName": "MKCentral.jpeg",
+      "imageFileName": "mkcentral.webp",
       "membershipLevel": "Bronze",
       "description": "A declared National Heritage Site with hiking trails and natural Highveld grasslands."
     },
@@ -22,7 +22,7 @@
       "address": "Northern Pkwy, Ormonde, Johannesburg",
       "phoneNumber": "+27 11 248 5000",
       "websiteURL": "https://www.goldreefcity.co.za/",
-      "imageFileName": "Goldreef.jpeg",
+      "imageFileName": "goldreef.webp",
       "membershipLevel": "Silver",
       "description": "Popular theme park and casino complex built on an old gold mine."
     },
@@ -31,7 +31,7 @@
       "address": "Loveday St, Braamfontein, Johannesburg",
       "phoneNumber": "+27 11 877 6800",
       "websiteURL": "https://www.joburgtheatre.com/",
-      "imageFileName": "Joburgtheatre.jpeg",
+      "imageFileName": "joburgtheatre.webp",
       "membershipLevel": "Silver",
       "description": "Major theatrical venue showcasing a diverse range of local and international productions."
     },
@@ -40,7 +40,7 @@
       "address": "11 Kotze St, Braamfontein, Johannesburg",
       "phoneNumber": "+27 11 381 3100",
       "websiteURL": "https://www.constitutionhill.org.za/",
-      "imageFileName": "ContitutionalHill.jpeg",
+      "imageFileName": "contitutionalhill.webp",
       "membershipLevel": "Bronze",
       "description": "Former prison and military fort, now a living museum and home to the Constitutional Court of South Africa."
     },
@@ -49,7 +49,7 @@
       "address": "Bank City, Simmonds St, Johannesburg",
       "phoneNumber": "+27 87 575 9404",
       "websiteURL": "https://www.fnb.co.za/",
-      "imageFileName": "fnb.jpeg",
+      "imageFileName": "fnb.webp",
       "membershipLevel": "Gold",
       "description": "Headquarters of First National Bank, a leading financial institution in South Africa."
     },
@@ -58,7 +58,7 @@
       "address": "Maude St, Sandton, Johannesburg",
       "phoneNumber": "+27 11 217 6000",
       "websiteURL": "https://www.nelsonmandelasquare.co.za/",
-      "imageFileName": "Mandela.jpeg",
+      "imageFileName": "mandelasq.webp",
       "membershipLevel": "Silver",
       "description": "Iconic public square featuring a large statue of Nelson Mandela, surrounded by shops and restaurants."
     },
@@ -67,7 +67,7 @@
       "address": "286 Fox Street, Johannesburg",
       "phoneNumber": "+27 10 900 2204",
       "websiteURL": "https://www.mabonengprecinct.com/",
-      "imageFileName": "Maboneng.jpeg",
+      "imageFileName": "maboneng.webp",
       "membershipLevel": "Gold",
       "description": "Vibrant urban neighborhood known for art galleries, creative spaces, restaurants, and weekend markets."
     }

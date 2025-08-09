@@ -5,23 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="author" content="Maisela Manhla Madise" />
   <meta name="description" content="Discover local businesses and attractions in Johannesburg with the Chamber Discovery page." />
-  <title>Chamber Discovery</title>
+  <title>Chamber Discover</title>
   <link rel="stylesheet" href="styles/chamber.css" />
-  <style>
-    .membership-level {
-      font-weight: normal;
-      font-style: italic;
-      color: #666;
-      font-size: 0.9em;
-      margin-left: 8px;
-    }
-  </style>
+ 
 </head>
 <body>
 
 <header>
-  <h1>Chamber Discovery</h1>
-  <nav>
+  <h1>Johannesburg Chamber Discover</h1>
+  <p>Connecting Businesses, Building Community</p>
+  <nav role="navigation" aria-label="Main navigation">
     <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="directory.html">Directory</a></li>
@@ -32,22 +25,24 @@
   </nav>
 </header>
 
-<main>
-  <section class="discover-grid" aria-label="Discover business and attractions" id="discover-container">
-    <!-- Cards will be loaded here -->
+<main role="main">
+  <section id="last-visit-message" style="margin: 1rem 0; font-style: italic; color: #444;" aria-live="polite"></section>
+
+  <section class="discover-grid" id="discover-container" aria-label="Discover business and attractions">
+    <!-- Cards will be dynamically loaded -->
   </section>
 </main>
 
-<footer>
+<footer role="contentinfo">
   <p>&copy; <span id="copyright-year"></span> Johannesburg Chamber of Commerce</p>
-  <p>Phone: +27 84 417 8859 | Email: info@joburgchamber.org</p>
+  <p>Phone: +27 84 417 8859 | Email: <a href="mailto:info@joburgchamber.org">info@joburgchamber.org</a></p>
   <p>Maisela Manhla Madise | WDD 231</p>
-  <p>Last Modification: <span id="last-modified"></span></p>
-  <p>Current Time: <span id="current-time"></span></p>
+  <p>Last Modification: <time id="last-modified"></time></p>
+  <p>Current Time: <time id="current-time"></time></p>
 </footer>
 
-<!-- JavaScript -->
 <script>
+  // Dates and time display
   document.getElementById('copyright-year').textContent = new Date().getFullYear();
   document.getElementById('last-modified').textContent = new Date(document.lastModified).toLocaleString();
 
@@ -58,9 +53,23 @@
   updateCurrentTime();
   setInterval(updateCurrentTime, 1000);
 
+  // Last visit message using localStorage
+  const lastVisit = localStorage.getItem('lastVisit');
+  const message = document.getElementById('last-visit-message');
+  if (lastVisit) {
+    message.textContent = `Welcome back! Your last visit was on ${lastVisit}.`;
+  } else {
+    message.textContent = "Welcome to your first visit to Chamber Discovery!";
+  }
+  localStorage.setItem('lastVisit', new Date().toLocaleString());
+
+  // Render business cards dynamically
   document.addEventListener('DOMContentLoaded', () => {
     fetch('data/businesses.json')
-      .then(response => response.json())
+      .then(response => {
+        if (!response.ok) throw new Error('Network response not ok');
+        return response.json();
+      })
       .then(businesses => {
         const container = document.getElementById('discover-container');
         businesses.forEach((biz, index) => {
@@ -70,22 +79,34 @@
 
           article.innerHTML = `
             <figure>
-              <img src="images/${biz.imageFileName}" alt="Image of ${biz.name}" />
+              <img src="images/${biz.imageFileName}" alt="Image of ${biz.name}" loading="lazy" width="400" height="250" />
               <figcaption class="sr-only">${biz.name} image</figcaption>
             </figure>
             <h2 id="card${index + 1}-title">${biz.name} <span class="membership-level">(${biz.membershipLevel} Member)</span></h2>
             <address>${biz.address}</address>
             <p>${biz.description}</p>
             <p>Phone: <a href="tel:${biz.phoneNumber.replace(/\s+/g, '')}">${biz.phoneNumber}</a></p>
-            <p>Website: <a href="${biz.websiteURL}" target="_blank" rel="noopener">${biz.websiteURL}</a></p>
-            <button onclick="alert('More info about ${biz.name} coming soon!')">Learn More</button>
+            <p>Website: <a href="${biz.websiteURL}" target="_blank" rel="noopener noreferrer">${biz.websiteURL}</a></p>
+            <button type="button" class="learn-more" data-name="${biz.name}">Learn More</button>
           `;
           container.appendChild(article);
+        });
+
+        // Attach event listeners after cards are added
+        document.querySelectorAll('.learn-more').forEach(button => {
+          button.addEventListener('click', (e) => {
+            const name = e.target.getAttribute('data-name');
+            alert(`More info about ${name} coming soon!`);
+          });
         });
       })
       .catch(error => {
         console.error('Failed to load businesses.json:', error);
-        document.getElementById('discover-container').innerHTML = "<p>Unable to load businesses at this time.</p>";
+        document.getElementById('discover-container').innerHTML = `
+          <article class="discover-card" style="grid-column: span 3;">
+            <h2>Oops!</h2>
+            <p>We couldn’t load the businesses right now. Please try refreshing the page or come back later.</p>
+          </article>`;
       });
   });
 </script>
