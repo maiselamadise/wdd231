@@ -1,27 +1,23 @@
-// ✅ Update copyright
+// Update copyright
 document.getElementById('copyright-year').textContent = new Date().getFullYear();
 
-// ✅ Last modified date
+// Last modified date
 const lastModifiedDate = new Date(document.lastModified);
 const lastModifiedElement = document.getElementById('last-modified');
-// Display user-friendly format inside element
 lastModifiedElement.textContent = lastModifiedDate.toLocaleString();
-// Set machine-readable ISO format for datetime attribute (full ISO string)
 lastModifiedElement.setAttribute('datetime', lastModifiedDate.toISOString());
 
-// ✅ Current time
+// Current time updater
 function updateCurrentTime() {
   const now = new Date();
   const currentTimeElement = document.getElementById('current-time');
-  // Show just the time in a friendly format
   currentTimeElement.textContent = now.toLocaleTimeString();
-  // Set full ISO string for datetime attribute (required format)
   currentTimeElement.setAttribute('datetime', now.toISOString());
 }
 updateCurrentTime();
 setInterval(updateCurrentTime, 1000);
 
-// ✅ Last visit tracking
+// Last visit tracking
 const lastVisitKey = 'lastVisit';
 const lastVisitMessage = document.getElementById('last-visit-message');
 const lastVisit = localStorage.getItem(lastVisitKey);
@@ -29,13 +25,14 @@ const lastVisit = localStorage.getItem(lastVisitKey);
 if (lastVisit) {
   const last = new Date(lastVisit);
   const daysAgo = Math.floor((Date.now() - last.getTime()) / (1000 * 60 * 60 * 24));
-  lastVisitMessage.textContent = `Welcome back! Your last visit was ${daysAgo} day(s) ago (${last.toLocaleString()}).`;
+  const dayLabel = daysAgo === 1 ? "day" : "days";
+  lastVisitMessage.textContent = `Welcome back! Your last visit was ${daysAgo} ${dayLabel} ago (${last.toLocaleString()}).`;
 } else {
   lastVisitMessage.textContent = "Welcome to your first visit to Chamber Discovery!";
 }
 localStorage.setItem(lastVisitKey, new Date().toISOString());
 
-// ✅ Fetch and display business cards
+// Fetch and display business cards
 document.addEventListener('DOMContentLoaded', () => {
   fetch('data/businesses.json')
     .then(response => {
@@ -44,6 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
     })
     .then(businesses => {
       const container = document.getElementById('discover-container');
+      container.innerHTML = ''; // Clear container in case of reload
 
       businesses.forEach((biz, index) => {
         const imageFile = encodeURIComponent(biz.imageFileName.toLowerCase());
@@ -80,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
         container.appendChild(article);
       });
 
-      // ✅ Learn More button functionality
+      // Learn More button functionality
       document.querySelectorAll('.learn-more').forEach(button => {
         button.addEventListener('click', e => {
           const name = e.currentTarget.getAttribute('data-name');
