@@ -1,5 +1,6 @@
 // Update copyright
-document.getElementById('copyright-year').textContent = new Date().getFullYear();
+document.getElementById('copyright-year').textContent =
+  new Date().getFullYear();
 
 // Last modified date
 const lastModifiedDate = new Date(document.lastModified);
