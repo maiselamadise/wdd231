@@ -1,0 +1,108 @@
+[
+    {
+      "id": 1,
+      "name": "Smart Thermostat Installation",
+      "description": "Upgrade to smart climate control with full app integration.",
+      "price": "$250",
+      "category": "Smart Home"
+    },
+    {
+      "id": 2,
+      "name": "Eco AC Retrofit",
+      "description": "Convert your old system into an energy-efficient model.",
+      "price": "$500",
+      "category": "Eco Upgrade"
+    },
+    {
+      "id": 3,
+      "name": "Emergency Repair",
+      "description": "Fast 24/7 technician dispatch service.",
+      "price": "$120/hour",
+      "category": "Repair"
+    },
+    {
+      "id": 4,
+      "name": "Annual AC Maintenance",
+      "description": "Full system inspection and tune-up.",
+      "price": "$90",
+      "category": "Maintenance"
+    },
+    {
+      "id": 5,
+      "name": "AC Installation (Split Unit)",
+      "description": "Professional install with 2-year warranty.",
+      "price": "$800",
+      "category": "Install"
+    },
+    {
+      "id": 6,
+      "name": "Wi-Fi Control Add-on",
+      "description": "Add app control to your existing AC unit.",
+      "price": "$150",
+      "category": "Smart Home"
+    },
+    {
+      "id": 7,
+      "name": "Duct Cleaning Service",
+      "description": "Improve air quality by removing dust buildup.",
+      "price": "$200",
+      "category": "Air Quality"
+    },
+    {
+      "id": 8,
+      "name": "Smart Zone AC Setup",
+      "description": "Control individual rooms independently.",
+      "price": "$400/zone",
+      "category": "Smart Home"
+    },
+    {
+      "id": 9,
+      "name": "Eco-Friendly Refrigerant Conversion",
+      "description": "Switch to R-32 or similar green gas.",
+      "price": "$350",
+      "category": "Eco Upgrade"
+    },
+    {
+      "id": 10,
+      "name": "Thermal Imaging Diagnostics",
+      "description": "Find air leaks and inefficiencies fast.",
+      "price": "$180",
+      "category": "Diagnostics"
+    },
+    {
+      "id": 11,
+      "name": "Whole-Home HVAC Install",
+      "description": "Custom cooling for multi-floor homes.",
+      "price": "From $3500",
+      "category": "Install"
+    },
+    {
+      "id": 12,
+      "name": "Energy Efficiency Audit",
+      "description": "Personalized recommendations to reduce AC costs.",
+      "price": "$100",
+      "category": "Eco Upgrade"
+    },
+    {
+      "id": 13,
+      "name": "Filter Replacement Service",
+      "description": "Clean air guaranteed. Subscription available.",
+      "price": "$30/month",
+      "category": "Air Quality"
+    },
+    {
+      "id": 14,
+      "name": "Noise Reduction Upgrade",
+      "description": "Install sound dampeners for a quieter unit.",
+      "price": "$220",
+      "category": "Upgrade"
+    },
+    {
+      "id": 15,
+      "name": "Smart AC Remote Training",
+      "description": "Get the most from your new system.",
+      "price": "$40",
+      "category": "Support"
+    }
+  ]
+  
