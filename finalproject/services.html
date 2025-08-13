@@ -1,75 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Explore our air conditioning services including smart installs, eco upgrades, and 24/7 repairs." />
-  <meta name="author" content="Your Name" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AmaraCool Tech – Our Services</title>
+  <meta name="description" content="Browse AmaraCool Tech's catalog of AC units and services. Filter by category, sort by price and rating.">
+  <meta name="author" content="AmaraCool Tech">
+  
+  <meta property="og:title" content="AmaraCool Tech – Services">
+  <meta property="og:description" content="Smart installation, repair, eco upgrades, and premium AC units.">
+  <meta property="og:image" content="images/og-image.png">
+  <meta property="og:url" content="https://example.com">
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="AmaraCool Tech - Services" />
-  <meta property="og:description" content="Explore modern AC services powered by smart and sustainable tech." />
-  <meta property="og:image" content="https://your-domain.com/images/og-image.jpg" />
-  <meta property="og:url" content="https://your-domain.com/services.html" />
-  <meta name="twitter:card" content="summary_large_image" />
-
-  <title>Services | AmaraCool Tech</title>
-  <link rel="stylesheet" href="styles/final.css" />
-  <link rel="icon" href="images/favicon.ico" />
-  <script type="module" src="scripts/main.js" defer></script>
+  <link rel="icon" href="images/favicon.ico">
+  <link rel="stylesheet" href="css/style.css">
+  <script type="module" src="js/main.js" defer></script>
+  <script type="module" src="js/services.js" defer></script>
 </head>
 <body>
-  <!-- HEADER -->
-  <header class="header">
-    <div class="logo">AmaraCool Tech</div>
-    <button id="hamburger" aria-label="Menu">☰</button>
-    <nav>
-      <ul id="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="services.html" class="active">Services</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
+  <header>
+    <img src="images/logo.svg" alt="AmaraCool Tech Logo" class="logo">
+    <nav aria-label="Main">
+      <button id="menu-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation">☰</button>
+      <ul id="nav-menu" role="menubar">
+        <li role="none"><a role="menuitem" href="index.html">Home</a></li>
+        <li role="none"><a role="menuitem" href="services.html" class="active">Services</a></li>
+        <li role="none"><a role="menuitem" href="contact.html">Contact</a></li>
       </ul>
     </nav>
-    <button id="theme-toggle" aria-label="Toggle Theme">🌓</button>
   </header>
 
-  <!-- MAIN CONTENT -->
-  <main class="section">
-    <h1>Our Services</h1>
+  <main id="catalog">
+    <h1>Our Services & Catalog</h1>
 
-    <!-- Static Overview -->
-    <ul class="service-list">
-      <li><strong>Smart AC Installation:</strong> Next-gen aircon systems with Wi-Fi control.</li>
-      <li><strong>24/7 Emergency Repairs:</strong> We're always on call when your unit breaks.</li>
-      <li><strong>Routine Maintenance:</strong> Keep your AC running longer and cooler.</li>
-      <li><strong>Energy Audits:</strong> Evaluate your home’s cooling efficiency.</li>
-      <li><strong>Eco Upgrades:</strong> Transition to eco-friendly refrigerants and tech.</li>
-    </ul>
+    <div class="filter-bar">
+      <label for="filter">Category</label>
+      <select id="filter" aria-label="Filter by category">
+        <option value="all">All</option>
+        <option value="installation">Installation</option>
+        <option value="repair">Repair</option>
+        <option value="smart">Smart AC</option>
+        <option value="eco">Eco-Friendly</option>
+        <option value="unit">AC Units</option>
+      </select>
 
-    <!-- Dynamic JSON Data Section -->
-    <section class="section">
-      <h2>Full Service Catalog</h2>
-      <div id="service-container" class="service-list">
-        <!-- JavaScript inserts services here -->
+      <label for="sort">Sort</label>
+      <select id="sort" aria-label="Sort options">
+        <option value="name-asc">Name A–Z</option>
+        <option value="price-asc">Price (Low → High)</option>
+        <option value="rating-desc">Rating (High → Low)</option>
+      </select>
+    </div>
+
+    <div id="services-container" class="grid cols-4" aria-live="polite"></div>
+
+    <!-- Accessible Modal -->
+    <div id="service-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true">
+      <div class="modal-content">
+        <button id="modal-close" aria-label="Close dialog">×</button>
+        <div id="modal-body"></div>
       </div>
-    </section>
+    </div>
   </main>
 
-  <!-- MODAL -->
-  <div id="modal" class="modal" role="dialog" aria-modal="true" hidden>
-    <div class="modal-box" id="modal-content">
-      <!-- Modal content injected via JS -->
-    </div>
-  </div>
-
-  <!-- FOOTER -->
   <footer>
-    <p>&copy; 2025 AmaraCool Tech</p>
-    <p>
-      <a href="attributions.html">Attributions</a> |
-      <a href="https://your-video-link.com" target="_blank">Demo Video</a>
-    </p>
+    <span>© 2025 AmaraCool Tech</span>
+    <a href="attributions.html">Attributions</a>
+    <a href="https://youtu.be/yourvideoid" target="_blank" rel="noopener">Project Video Demo</a>
   </footer>
 </body>
 </html>

@@ -1,81 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Welcome to AmaraCool Tech — smart, sustainable air conditioning services." />
-  <meta name="author" content="Your Name" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AmaraCool Tech – Stay Cool, Stay Smart</title>
+  <meta name="description" content="Professional air conditioning services: installation, repair, smart home AC integration, and eco-friendly cooling solutions. Book today.">
+  <meta name="author" content="AmaraCool Tech">
+  
+  <meta property="og:title" content="AmaraCool Tech – Advanced Air Conditioning">
+  <meta property="og:description" content="Stay cool with our smart and eco-friendly AC services.">
+  <meta property="og:image" content="images/og-image.png">
+  <meta property="og:url" content="https://example.com">
 
-  <!-- Open Graph Metadata -->
-  <meta property="og:title" content="AmaraCool Tech - Smart AC Services" />
-  <meta property="og:description" content="Modern, eco-friendly air conditioning installs, repairs, and maintenance." />
-  <meta property="og:image" content="https://your-domain.com/images/og-image.jpg" />
-  <meta property="og:url" content="https://your-domain.com/" />
-  <meta name="twitter:card" content="summary_large_image" />
-
-  <title>Home | AmaraCool Tech</title>
-  <link rel="stylesheet" href="styles/final.css" />
-  <link rel="icon" href="images/favicon.ico" />
-  <script type="module" src="scripts/main.js" defer></script>
+  <link rel="icon" href="images/favicon.ico">
+  <link rel="preload" as="image" href="images/hero.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <script type="module" src="js/main.js" defer></script>
 </head>
 <body>
-  <!-- HEADER -->
-  <header class="header">
-    <div class="logo">AmaraCool Tech</div>
-    <button id="hamburger" aria-label="Menu">☰</button>
-    <nav>
-      <ul id="nav-links">
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
+  <header>
+    <img src="images/logo.svg" alt="AmaraCool Tech Logo" class="logo">
+    <nav aria-label="Main">
+      <button id="menu-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation">☰</button>
+      <ul id="nav-menu" role="menubar">
+        <li role="none"><a role="menuitem" href="index.html" class="active">Home</a></li>
+        <li role="none"><a role="menuitem" href="services.html">Services</a></li>
+        <li role="none"><a role="menuitem" href="contact.html">Contact</a></li>
       </ul>
     </nav>
-    <button id="theme-toggle" aria-label="Toggle Theme">🌓</button>
   </header>
 
-  <!-- HERO SECTION -->
   <main>
     <section class="hero">
-      <h1>Smart. Sustainable. Cool.</h1>
-      <p>Your trusted partner for high-tech air conditioning solutions.</p>
-      <a href="contact.html" class="btn-primary">Book Your Service Now</a>
+      <img src="images/hero.svg" alt="" width="800" height="300" loading="eager" />
+      <h1>Stay Cool, Stay Smart</h1>
+      <p>Expert air conditioning installation, repair, and smart home solutions—optimized for efficiency and comfort.</p>
+      <p>
+        <a href="services.html" class="btn">Book Your Service Now</a>
+        <a href="services.html#catalog" class="btn" style="margin-left:.5rem;background:var(--accent);color:var(--text)">Browse Catalog</a>
+      </p>
     </section>
 
-    <!-- FEATURED SERVICES -->
     <section class="section">
-      <h2>What We Offer</h2>
-      <div class="features">
-        <div class="feature">
-          <h3>Smart AC Installs</h3>
-          <p>Control your climate with voice and app-based systems.</p>
+      <div class="grid cols-3">
+        <div class="card">
+          <h3>Installation</h3>
+          <p>Professional split and ducted system installation with compliance and testing.</p>
         </div>
-        <div class="feature">
-          <h3>Eco-Friendly Upgrades</h3>
-          <p>We help you transition to energy-efficient cooling tech.</p>
+        <div class="card">
+          <h3>Repair</h3>
+          <p>Fast diagnostics and genuine parts replacements to extend unit lifespan.</p>
         </div>
-        <div class="feature">
-          <h3>24/7 Support</h3>
-          <p>Emergency repairs and diagnostics when you need them most.</p>
+        <div class="card">
+          <h3>Smart & Eco</h3>
+          <p>Wi‑Fi control, smart thermostats, and energy‑efficient upgrades to save costs.</p>
         </div>
       </div>
     </section>
-
-    <!-- CTA -->
-    <section class="cta">
-      <h2>Ready for the Coolest Upgrade?</h2>
-      <p>Let’s make your home smarter and more efficient.</p>
-      <a href="services.html" class="btn-secondary">Explore Services</a>
-    </section>
   </main>
 
-  <!-- FOOTER -->
   <footer>
-    <p>&copy; 2025 AmaraCool Tech</p>
-    <p>
-      <a href="attributions.html">Attributions</a> |
-      <a href="https://your-video-link.com" target="_blank">Demo Video</a>
-    </p>
+    <span>© 2025 AmaraCool Tech</span>
+    <a href="attributions.html">Attributions</a>
+    <a href="https://youtu.be/yourvideoid" target="_blank" rel="noopener">Project Video Demo</a>
   </footer>
 </body>
 </html>
