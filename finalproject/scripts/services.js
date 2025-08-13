@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', async ()=>{
 
   let items = [];
   try{
-    items = await fetchData('data/aircons.json');
+    items = await fetchData('data/services.json');
     render(items, prefs.filter, prefs.sort);
   }catch(_){
     container.textContent = 'Failed to load services.';

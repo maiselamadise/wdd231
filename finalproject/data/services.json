@@ -1,108 +1,194 @@
 [
-    {
-      "id": 1,
-      "name": "Smart Thermostat Installation",
-      "description": "Upgrade to smart climate control with full app integration.",
-      "price": "$250",
-      "category": "Smart Home"
-    },
-    {
-      "id": 2,
-      "name": "Eco AC Retrofit",
-      "description": "Convert your old system into an energy-efficient model.",
-      "price": "$500",
-      "category": "Eco Upgrade"
-    },
-    {
-      "id": 3,
-      "name": "Emergency Repair",
-      "description": "Fast 24/7 technician dispatch service.",
-      "price": "$120/hour",
-      "category": "Repair"
-    },
-    {
-      "id": 4,
-      "name": "Annual AC Maintenance",
-      "description": "Full system inspection and tune-up.",
-      "price": "$90",
-      "category": "Maintenance"
-    },
-    {
-      "id": 5,
-      "name": "AC Installation (Split Unit)",
-      "description": "Professional install with 2-year warranty.",
-      "price": "$800",
-      "category": "Install"
-    },
-    {
-      "id": 6,
-      "name": "Wi-Fi Control Add-on",
-      "description": "Add app control to your existing AC unit.",
-      "price": "$150",
-      "category": "Smart Home"
-    },
-    {
-      "id": 7,
-      "name": "Duct Cleaning Service",
-      "description": "Improve air quality by removing dust buildup.",
-      "price": "$200",
-      "category": "Air Quality"
-    },
-    {
-      "id": 8,
-      "name": "Smart Zone AC Setup",
-      "description": "Control individual rooms independently.",
-      "price": "$400/zone",
-      "category": "Smart Home"
-    },
-    {
-      "id": 9,
-      "name": "Eco-Friendly Refrigerant Conversion",
-      "description": "Switch to R-32 or similar green gas.",
-      "price": "$350",
-      "category": "Eco Upgrade"
-    },
-    {
-      "id": 10,
-      "name": "Thermal Imaging Diagnostics",
-      "description": "Find air leaks and inefficiencies fast.",
-      "price": "$180",
-      "category": "Diagnostics"
-    },
-    {
-      "id": 11,
-      "name": "Whole-Home HVAC Install",
-      "description": "Custom cooling for multi-floor homes.",
-      "price": "From $3500",
-      "category": "Install"
-    },
-    {
-      "id": 12,
-      "name": "Energy Efficiency Audit",
-      "description": "Personalized recommendations to reduce AC costs.",
-      "price": "$100",
-      "category": "Eco Upgrade"
-    },
-    {
-      "id": 13,
-      "name": "Filter Replacement Service",
-      "description": "Clean air guaranteed. Subscription available.",
-      "price": "$30/month",
-      "category": "Air Quality"
-    },
-    {
-      "id": 14,
-      "name": "Noise Reduction Upgrade",
-      "description": "Install sound dampeners for a quieter unit.",
-      "price": "$220",
-      "category": "Upgrade"
-    },
-    {
-      "id": 15,
-      "name": "Smart AC Remote Training",
-      "description": "Get the most from your new system.",
-      "price": "$40",
-      "category": "Support"
-    }
-  ]
-  
+  {
+    "id": 1,
+    "name": "AmaraCool Model 101",
+    "category": "repair",
+    "energyRating": 4,
+    "price": "$519",
+    "priceValue": 519,
+    "btu": 9500,
+    "noise": 39,
+    "description": "Efficient cooling with smart controls and eco-friendly refrigerant.",
+    "image": "images/unit-placeholder.png"
+  },
+  {
+    "id": 2,
+    "name": "AmaraCool Model 102",
+    "category": "smart",
+    "energyRating": 5,
+    "price": "$539",
+    "priceValue": 539,
+    "btu": 10000,
+    "noise": 40,
+    "description": "Efficient cooling with smart controls and eco-friendly refrigerant.",
+    "image": "images/unit-placeholder.png"
+  },
+  {
+    "id": 3,
+    "name": "AmaraCool Model 103",
+    "category": "eco",
+    "energyRating": 3,
+    "price": "$559",
+    "priceValue": 559,
+    "btu": 10500,
+    "noise": 41,
+    "description": "Efficient cooling with smart controls and eco-friendly refrigerant.",
+    "image": "images/unit-placeholder.png"
+  },
+  {
+    "id": 4,
+    "name": "AmaraCool Model 104",
+    "category": "unit",
+    "energyRating": 4,
+    "price": "$579",
+    "priceValue": 579,
+    "btu": 11000,
+    "noise": 42,
+    "description": "Efficient cooling with smart controls and eco-friendly refrigerant.",
+    "image": "images/unit-placeholder.png"
+  },
+  {
+    "id": 5,
+    "name": "AmaraCool Model 105",
+    "category": "installation",
+    "energyRating": 5,
+    "price": "$599",
+    "priceValue": 599,
+    "btu": 11500,
+    "noise": 38,
+    "description": "Efficient cooling with smart controls and eco-friendly refrigerant.",
+    "image": "images/unit-placeholder.png"
+  },
+  {
+    "id": 6,
+    "name": "AmaraCool Model 106",
+    "category": "repair",
+    "energyRating": 3,
+    "price": "$619",
+    "priceValue": 619,
+    "btu": 12000,
+    "noise": 39,
+    "description": "Efficient cooling with smart controls and eco-friendly refrigerant.",
+    "image": "images/unit-placeholder.png"
+  },
+  {
+    "id": 7,
+    "name": "AmaraCool Model 107",
+    "category": "smart",
+    "energyRating": 4,
+    "price": "$639",
+    "priceValue": 639,
+    "btu": 12500,
+    "noise": 40,
+    "description": "Efficient cooling with smart controls and eco-friendly refrigerant.",
+    "image": "images/unit-placeholder.png"
+  },
+  {
+    "id": 8,
+    "name": "AmaraCool Model 108",
+    "category": "eco",
+    "energyRating": 5,
+    "price": "$659",
+    "priceValue": 659,
+    "btu": 13000,
+    "noise": 41,
+    "description": "Efficient cooling with smart controls and eco-friendly refrigerant.",
+    "image": "images/unit-placeholder.png"
+  },
+  {
+    "id": 9,
+    "name": "AmaraCool Model 109",
+    "category": "unit",
+    "energyRating": 3,
+    "price": "$679",
+    "priceValue": 679,
+    "btu": 13500,
+    "noise": 42,
+    "description": "Efficient cooling with smart controls and eco-friendly refrigerant.",
+    "image": "images/unit-placeholder.png"
+  },
+  {
+    "id": 10,
+    "name": "AmaraCool Model 110",
+    "category": "installation",
+    "energyRating": 4,
+    "price": "$699",
+    "priceValue": 699,
+    "btu": 14000,
+    "noise": 38,
+    "description": "Efficient cooling with smart controls and eco-friendly refrigerant.",
+    "image": "images/unit-placeholder.png"
+  },
+  {
+    "id": 11,
+    "name": "AmaraCool Model 111",
+    "category": "repair",
+    "energyRating": 5,
+    "price": "$719",
+    "priceValue": 719,
+    "btu": 14500,
+    "noise": 39,
+    "description": "Efficient cooling with smart controls and eco-friendly refrigerant.",
+    "image": "images/unit-placeholder.png"
+  },
+  {
+    "id": 12,
+    "name": "AmaraCool Model 112",
+    "category": "smart",
+    "energyRating": 3,
+    "price": "$739",
+    "priceValue": 739,
+    "btu": 15000,
+    "noise": 40,
+    "description": "Efficient cooling with smart controls and eco-friendly refrigerant.",
+    "image": "images/unit-placeholder.png"
+  },
+  {
+    "id": 13,
+    "name": "AmaraCool Model 113",
+    "category": "eco",
+    "energyRating": 4,
+    "price": "$759",
+    "priceValue": 759,
+    "btu": 15500,
+    "noise": 41,
+    "description": "Efficient cooling with smart controls and eco-friendly refrigerant.",
+    "image": "images/unit-placeholder.png"
+  },
+  {
+    "id": 14,
+    "name": "AmaraCool Model 114",
+    "category": "unit",
+    "energyRating": 5,
+    "price": "$779",
+    "priceValue": 779,
+    "btu": 16000,
+    "noise": 42,
+    "description": "Efficient cooling with smart controls and eco-friendly refrigerant.",
+    "image": "images/unit-placeholder.png"
+  },
+  {
+    "id": 15,
+    "name": "AmaraCool Model 115",
+    "category": "installation",
+    "energyRating": 3,
+    "price": "$799",
+    "priceValue": 799,
+    "btu": 16500,
+    "noise": 38,
+    "description": "Efficient cooling with smart controls and eco-friendly refrigerant.",
+    "image": "images/unit-placeholder.png"
+  },
+  {
+    "id": 16,
+    "name": "AmaraCool Model 116",
+    "category": "repair",
+    "energyRating": 4,
+    "price": "$819",
+    "priceValue": 819,
+    "btu": 17000,
+    "noise": 39,
+    "description": "Efficient cooling with smart controls and eco-friendly refrigerant.",
+    "image": "images/unit-placeholder.png"
+  }
+]
