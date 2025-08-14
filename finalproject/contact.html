@@ -7,7 +7,6 @@
   <meta name="description" content="Contact AmaraCool Tech for bookings, quotes, and support.">
   <meta name="author" content="Maisela Manhla Madise">
 
-  <!-- Open Graph for social sharing -->
   <meta property="og:title" content="AmaraCool Tech – Contact">
   <meta property="og:description" content="Get in touch with our support and booking team.">
   <meta property="og:image" content="images/og-image.png">
@@ -33,7 +32,7 @@
 
   <main>
     <h1>Contact Us</h1>
-    <form action="form-action.html" method="POST" aria-label="Contact form">
+    <form id="contact-form" action="form-action.html" method="POST" aria-label="Contact form">
       <label for="name">Full Name</label>
       <input type="text" id="name" name="name" required aria-required="true" placeholder="John Doe" autocomplete="name">
 
@@ -46,7 +45,6 @@
       <button type="submit" class="primary">Send Message</button>
     </form>
 
-    <!-- Accessible feedback region for form submission -->
     <div id="form-feedback" aria-live="polite" class="sr-only"></div>
   </main>
 
@@ -59,13 +57,53 @@
   </footer>
 
   <script>
-    // Example JS to toggle mobile menu accessibility
+    // Menu toggle
     const menuToggle = document.getElementById('menu-toggle');
     const navMenu = document.getElementById('nav-menu');
     menuToggle.addEventListener('click', () => {
       const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
       menuToggle.setAttribute('aria-expanded', !expanded);
       navMenu.style.display = expanded ? 'none' : 'block';
+    });
+
+    // Contact form storage
+    const form = document.getElementById('contact-form');
+    const feedback = document.getElementById('form-feedback');
+
+    // Retrieve stored submissions
+    function getSubmissions() {
+      return JSON.parse(localStorage.getItem('contactSubmissions')) || [];
+    }
+
+    // Pre-fill form with last submission
+    window.addEventListener('DOMContentLoaded', () => {
+      const submissions = getSubmissions();
+      if (submissions.length > 0) {
+        const last = submissions[submissions.length - 1];
+        document.getElementById('name').value = last.name;
+        document.getElementById('email').value = last.email;
+        document.getElementById('message').value = last.message;
+      }
+    });
+
+    // Save submission on form submit
+    form.addEventListener('submit', (e) => {
+      e.preventDefault(); // prevent default action
+
+      const submission = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        message: document.getElementById('message').value,
+        timestamp: new Date().toISOString()
+      };
+
+      const submissions = getSubmissions();
+      submissions.push(submission);
+      localStorage.setItem('contactSubmissions', JSON.stringify(submissions));
+
+      feedback.textContent = `Message saved! Total messages stored: ${submissions.length}`;
+
+      form.reset();
     });
   </script>
 </body>

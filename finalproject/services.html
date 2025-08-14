@@ -6,11 +6,20 @@
   <title>AmaraCool Tech – Our Services</title>
   <meta name="description" content="Browse AmaraCool Tech's catalog of AC units and services. Filter by category, sort by price and rating.">
   <meta name="author" content="Maisela Manhla Madise">
-  
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph -->
   <meta property="og:title" content="AmaraCool Tech – Services">
   <meta property="og:description" content="Smart installation, repair, eco upgrades, and premium AC units.">
   <meta property="og:image" content="images/og-image.png">
   <meta property="og:url" content="https://example.com">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AmaraCool Tech – Services">
+  <meta name="twitter:description" content="Smart installation, repair, eco upgrades, and premium AC units.">
+  <meta name="twitter:image" content="images/og-image.png">
 
   <link rel="icon" href="images/favicon.ico">
   <link rel="stylesheet" href="styles/final.css">
@@ -20,8 +29,8 @@
 <body>
   <header>
     <img src="images/logo.svg" alt="AmaraCool Tech Logo" class="logo">
-    <nav aria-label="Main">
-      <button id="menu-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation">☰</button>
+    <nav aria-label="Main navigation">
+      <button id="menu-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation menu">☰</button>
       <ul id="nav-menu" role="menubar">
         <li role="none"><a role="menuitem" href="index.html">Home</a></li>
         <li role="none"><a role="menuitem" href="services.html" class="active">Services</a></li>
@@ -34,7 +43,7 @@
   <main id="catalog">
     <h1>Our Services & Catalog</h1>
 
-    <div class="filter-bar">
+    <section class="filter-bar" aria-label="Service filters">
       <label for="filter">Category</label>
       <select id="filter" aria-label="Filter by category">
         <option value="all">All</option>
@@ -51,9 +60,11 @@
         <option value="price-asc">Price (Low → High)</option>
         <option value="rating-desc">Rating (High → Low)</option>
       </select>
-    </div>
+    </section>
 
-    <div id="services-container" class="grid cols-4" aria-live="polite"></div>
+    <section id="services-container" class="grid cols-4" aria-live="polite" aria-label="Service catalog">
+      <!-- Service items will be injected here dynamically -->
+    </section>
 
     <!-- Accessible Modal -->
     <div id="service-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true">
@@ -67,7 +78,29 @@
   <footer>
     <span>© 2025 Maisela Manhla Madise | WDD 231</span> |
     <a href="attributions.html">Attributions</a> |
-    <a href="https://youtu.be/yourvideoid" target="_blank" rel="noopener">Project Video</a>
+    <a href="https://youtu.be/yourvideoid" target="_blank" rel="noopener noreferrer">Project Video</a>
   </footer>
+
+  <script>
+    // Modal keyboard accessibility
+    const modal = document.getElementById('service-modal');
+    const closeModal = document.getElementById('modal-close');
+
+    function openModal() {
+      modal.removeAttribute('aria-hidden');
+      modal.querySelector('#modal-body').focus();
+    }
+
+    function closeModalFunc() {
+      modal.setAttribute('aria-hidden', 'true');
+    }
+
+    closeModal.addEventListener('click', closeModalFunc);
+    document.addEventListener('keydown', (e) => {
+      if(e.key === 'Escape' && modal.getAttribute('aria-hidden') === 'false') {
+        closeModalFunc();
+      }
+    });
+  </script>
 </body>
 </html>
