@@ -2,13 +2,13 @@
 
 /* Color Scheme */
 :root {
-  --primary: #0077b6;     /* Deep Ocean */
-  --accent: #3db0c9;      /* Aqua Blue */
-  --bg: #f7fafd;          /* Cloud White */
-  --text: #023e8a;        /* Navy Blue */
-  --highlight: #ff6b6b;   /* Coral Pop */
-  --success: #28a745;     /* Fresh Green */
-  --warning: #e0a800;     /* Golden Amber */
+  --primary: #0077b6;     
+  --accent: #3db0c9;      
+  --bg: #f7fafd;          
+  --text: #023e8a;        
+  --highlight: #ff6b6b;   
+  --success: #28a745;     
+  --warning: #e0a800;    
   --white: #ffffff;
 }
 
