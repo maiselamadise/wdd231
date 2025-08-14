@@ -6,7 +6,8 @@
   <title>AmaraCool Tech – Contact Us</title>
   <meta name="description" content="Contact AmaraCool Tech for bookings, quotes, and support.">
   <meta name="author" content="Maisela Manhla Madise">
-  
+
+  <!-- Open Graph for social sharing -->
   <meta property="og:title" content="AmaraCool Tech – Contact">
   <meta property="og:description" content="Get in touch with our support and booking team.">
   <meta property="og:image" content="images/og-image.png">
@@ -19,12 +20,12 @@
 <body>
   <header>
     <img src="images/logo.svg" alt="AmaraCool Tech Logo" class="logo">
-    <nav aria-label="Main">
+    <nav aria-label="Main navigation">
       <button id="menu-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation">☰</button>
       <ul id="nav-menu" role="menubar">
         <li role="none"><a role="menuitem" href="index.html">Home</a></li>
         <li role="none"><a role="menuitem" href="services.html">Services</a></li>
-        <li role="none"><a role="menuitem" href="about.html">About</a>
+        <li role="none"><a role="menuitem" href="about.html">About</a></li>
         <li role="none"><a role="menuitem" href="contact.html" class="active">Contact</a></li>
       </ul>
     </nav>
@@ -32,24 +33,40 @@
 
   <main>
     <h1>Contact Us</h1>
-    <form action="form-action.html" method="GET">
+    <form action="form-action.html" method="POST" aria-label="Contact form">
       <label for="name">Full Name</label>
-      <input type="text" id="name" name="name" required>
+      <input type="text" id="name" name="name" required aria-required="true" placeholder="John Doe" autocomplete="name">
 
       <label for="email">Email</label>
-      <input type="email" id="email" name="email" required>
+      <input type="email" id="email" name="email" required aria-required="true" placeholder="you@example.com" autocomplete="email">
 
       <label for="message">Message</label>
-      <textarea id="message" name="message" rows="5" required></textarea>
+      <textarea id="message" name="message" rows="5" required aria-required="true" placeholder="Your message here..."></textarea>
 
       <button type="submit" class="primary">Send Message</button>
     </form>
+
+    <!-- Accessible feedback region for form submission -->
+    <div id="form-feedback" aria-live="polite" class="sr-only"></div>
   </main>
 
   <footer>
-    <span>© 2025 Maisela Manhla Madise | WDD 231</span>
-    <a href="attributions.html">Attributions</a>
-    <a href="https://youtu.be/yourvideoid" target="_blank" rel="noopener">Project Video Demo</a>
+    <p>© 2025 Maisela Manhla Madise | WDD 231</p> |
+    <nav aria-label="Footer links">
+      <a href="attributions.html">Attributions</a> |
+      <a href="https://youtu.be/yourvideoid" target="_blank" rel="noopener noreferrer">Project Video</a>
+    </nav>
   </footer>
+
+  <script>
+    // Example JS to toggle mobile menu accessibility
+    const menuToggle = document.getElementById('menu-toggle');
+    const navMenu = document.getElementById('nav-menu');
+    menuToggle.addEventListener('click', () => {
+      const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
+      menuToggle.setAttribute('aria-expanded', !expanded);
+      navMenu.style.display = expanded ? 'none' : 'block';
+    });
+  </script>
 </body>
 </html>
